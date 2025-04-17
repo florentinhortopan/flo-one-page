@@ -94,10 +94,10 @@ const ContactSection = () => {
     if (formRef.current) {
       emailjs
         .sendForm(
-          "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-          "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+          "Yservice_wv2mx5p", // Replace with your EmailJS service ID
+          "Ytemplate_j9rt1ff", // Replace with your EmailJS template ID
           formRef.current,
-          "YOUR_PUBLIC_KEY", // Replace with your EmailJS public key
+          "YmwwQi5lTD0VvQkSimY", // Replace with your EmailJS public key
         )
         .then((result) => {
           console.log("Email sent successfully:", result.text);

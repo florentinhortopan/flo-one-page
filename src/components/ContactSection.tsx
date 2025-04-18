@@ -94,10 +94,10 @@ const ContactSection = () => {
     if (formRef.current) {
       emailjs
         .sendForm(
-          "Yservice_wv2mx5p", // Replace with your EmailJS service ID
-          "Ytemplate_j9rt1ff", // Replace with your EmailJS template ID
+          "service_wv2mx5p", // Your EmailJS service ID
+          "template_j9rt1ff", // Your EmailJS template ID
           formRef.current,
-          "YmwwQi5lTD0VvQkSimY", // Replace with your EmailJS public key
+          "mwwQi5lTD0VvQkSimY", // Your EmailJS public key
         )
         .then((result) => {
           console.log("Email sent successfully:", result.text);
@@ -237,7 +237,7 @@ const ContactSection = () => {
                       </label>
                       <Input
                         id="name"
-                        name="name"
+                        name="from_name"
                         placeholder="Your name"
                         value={formData.name}
                         onChange={handleChange}
@@ -255,7 +255,7 @@ const ContactSection = () => {
                       </label>
                       <Input
                         id="email"
-                        name="email"
+                        name="reply_to"
                         type="email"
                         placeholder="your.email@example.com"
                         value={formData.email}

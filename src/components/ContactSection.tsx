@@ -240,7 +240,12 @@ const ContactSection = () => {
                         name="from_name"
                         placeholder="Your name"
                         value={formData.name}
-                        onChange={handleChange}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            name: e.target.value,
+                          }))
+                        }
                         required
                         className="bg-background border-input focus:ring-primary dark:focus:ring-accent"
                       />
@@ -259,7 +264,12 @@ const ContactSection = () => {
                         type="email"
                         placeholder="your.email@example.com"
                         value={formData.email}
-                        onChange={handleChange}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            email: e.target.value,
+                          }))
+                        }
                         required
                         className="bg-background border-input focus:ring-primary dark:focus:ring-accent"
                       />
@@ -277,7 +287,12 @@ const ContactSection = () => {
                         name="subject"
                         placeholder="What's this about?"
                         value={formData.subject}
-                        onChange={handleChange}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            subject: e.target.value,
+                          }))
+                        }
                         required
                         className="bg-background border-input focus:ring-primary dark:focus:ring-accent"
                       />
@@ -296,7 +311,12 @@ const ContactSection = () => {
                         placeholder="Tell me about your project or inquiry..."
                         rows={5}
                         value={formData.message}
-                        onChange={handleChange}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            message: e.target.value,
+                          }))
+                        }
                         required
                         className="bg-background border-input focus:ring-primary dark:focus:ring-accent"
                       />

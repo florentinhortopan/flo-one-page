@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -6,13 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Send, Star, AlertCircle } from "lucide-react";
-import emailjs from "@emailjs/browser";
+import { Button } from "@/components/ui/button";
 
 interface TestimonialProps {
   name: string;
@@ -208,57 +205,54 @@ const ContactSection = () => {
                   </div>
                 ) : (
                   <form id="form" className="space-y-4">
-                    <div className="field space-y-2">
-                      <label
-                        htmlFor="name"
-                        className="text-sm font-medium text-foreground"
-                      >
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-sm font-medium">
                         Name
                       </label>
                       <input
                         type="text"
+                        name="from_name"
                         id="name"
-                        name="name"
-                        className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
+                        className="w-full p-2 border rounded-md bg-background"
+                        required
                       />
                     </div>
-
-                    <div className="field space-y-2">
-                      <label
-                        htmlFor="email"
-                        className="text-sm font-medium text-foreground"
-                      >
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-medium">
                         Email
                       </label>
                       <input
-                        type="text"
+                        type="email"
+                        name="reply_to"
                         id="email"
-                        name="email"
-                        className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
+                        className="w-full p-2 border rounded-md bg-background"
+                        required
                       />
                     </div>
-
-                    <div className="field_message space-y-2">
-                      <label
-                        htmlFor="title"
-                        className="text-sm font-medium text-foreground"
-                      >
+                    <div className="space-y-2">
+                      <label htmlFor="message" className="text-sm font-medium">
                         Message
                       </label>
-                      <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
-                      />
+                      <textarea
+                        name="message"
+                        id="message"
+                        rows={4}
+                        className="w-full p-2 border rounded-md bg-background"
+                        required
+                      ></textarea>
                     </div>
-
                     <input
                       type="submit"
                       id="button"
                       value="Send Email"
-                      className="w-full px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground dark:bg-accent dark:hover:bg-accent/90 dark:text-accent-foreground rounded-md cursor-pointer"
+                      className="w-full py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 cursor-pointer"
                     />
+                    {error && (
+                      <div className="flex items-center gap-2 text-destructive text-sm mt-2">
+                        <AlertCircle className="h-4 w-4" />
+                        {error}
+                      </div>
+                    )}
                   </form>
                 )}
               </CardContent>

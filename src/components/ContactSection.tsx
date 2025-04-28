@@ -54,64 +54,49 @@ const Testimonial = ({
 };
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  useEffect(() => {
+    // Initialize EmailJS form handling
+    const initEmailJS = () => {
+      const form = document.getElementById("form") as HTMLFormElement;
+      const btn = document.getElementById("button") as HTMLInputElement;
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
+      if (form && btn) {
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
 
-    // Make sure all required fields are filled
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.subject ||
-      !formData.message
-    ) {
-      setError("Please fill in all required fields");
-      setIsSubmitting(false);
-      return;
-    }
+          btn.value = "Sending...";
+          btn.disabled = true;
 
-    // EmailJS service integration
-    if (formRef.current) {
-      emailjs
-        .sendForm(
-          "service_wv2mx5p", // Your EmailJS service ID
-          "template_j9rt1ff", // Your EmailJS template ID
-          formRef.current,
-          "mwwQi5lTD0VvQkSimY", // Your EmailJS public key
-        )
-        .then((result) => {
-          console.log("Email sent successfully:", result.text);
-          setIsSubmitting(false);
-          setIsSubmitted(true);
-          setFormData({ name: "", email: "", subject: "", message: "" });
-        })
-        .catch((error) => {
-          console.error("Failed to send email:", error.text);
-          setError("Failed to send your message. Please try again later.");
-          setIsSubmitting(false);
+          const serviceID = "default_service";
+          const templateID = "template_ygm5p7s";
+
+          emailjs.sendForm(serviceID, templateID, this).then(
+            () => {
+              btn.value = "Send Email";
+              btn.disabled = false;
+              setIsSubmitted(true);
+            },
+            (err) => {
+              btn.value = "Send Email";
+              btn.disabled = false;
+              setError("Failed to send your message. Please try again later.");
+              console.error("EmailJS error:", err);
+            },
+          );
         });
-    }
-  };
+      }
+    };
+
+    // Small timeout to ensure the DOM is fully loaded
+    const timer = setTimeout(() => {
+      initEmailJS();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [isSubmitted]);
 
   const testimonials: TestimonialProps[] = [
     {
@@ -198,7 +183,7 @@ const ContactSection = () => {
             <Card className="bg-card border border-border dark:border-border/50">
               <CardHeader>
                 <CardTitle className="text-card-foreground">
-                  Get in Touch 3
+                  Get in Touch 4
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Interested in working together? Fill out the form below to

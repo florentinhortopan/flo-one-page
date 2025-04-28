@@ -198,7 +198,7 @@ const ContactSection = () => {
             <Card className="bg-card border border-border dark:border-border/50">
               <CardHeader>
                 <CardTitle className="text-card-foreground">
-                  Get in Touch 2
+                  Get in Touch
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Interested in working together? Fill out the form below to
@@ -234,7 +234,6 @@ const ContactSection = () => {
                         type="text"
                         id="name"
                         name="name"
-                        required
                         className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
                       />
                     </div>
@@ -247,44 +246,26 @@ const ContactSection = () => {
                         Email
                       </label>
                       <input
-                        type="email"
+                        type="text"
                         id="email"
                         name="email"
-                        required
                         className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
                       />
                     </div>
 
-                    <div className="field space-y-2">
+                    <div className="field_message space-y-2">
                       <label
-                        htmlFor="subject"
-                        className="text-sm font-medium text-foreground"
-                      >
-                        Subject
-                      </label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        required
-                        className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
-                      />
-                    </div>
-
-                    <div className="field space-y-2">
-                      <label
-                        htmlFor="message"
+                        htmlFor="title"
                         className="text-sm font-medium text-foreground"
                       >
                         Message
                       </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        required
-                        rows={4}
+                      <input
+                        type="text"
+                        id="title"
+                        name="title"
                         className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
-                      ></textarea>
+                      />
                     </div>
 
                     <input

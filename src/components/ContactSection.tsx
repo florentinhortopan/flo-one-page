@@ -71,21 +71,27 @@ const ContactSection = () => {
           const templateID = "template_ygm5p7s";
 
           // @ts-ignore - EmailJS is loaded from CDN
-          emailjs.sendForm(serviceID, templateID, this).then(
-            () => {
-              btn.value = "Send Email";
-              btn.disabled = false;
-              setIsSubmitted(true);
-              alert("Sent!");
-            },
-            (err) => {
-              btn.value = "Send Email";
-              btn.disabled = false;
-              setError("Failed to send your message. Please try again later.");
-              console.error("EmailJS error:", err);
-              alert(JSON.stringify(err));
-            },
-          );
+          emailjs
+            .sendForm(serviceID, templateID, this, {
+              to_email: "florentinhortopan@gmail.com", // Replace with your actual email
+            })
+            .then(
+              () => {
+                btn.value = "Send Email";
+                btn.disabled = false;
+                setIsSubmitted(true);
+                alert("Sent!");
+              },
+              (err) => {
+                btn.value = "Send Email";
+                btn.disabled = false;
+                setError(
+                  "Failed to send your message. Please try again later.",
+                );
+                console.error("EmailJS error:", err);
+                alert(JSON.stringify(err));
+              },
+            );
         });
       }
     };

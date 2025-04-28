@@ -214,139 +214,85 @@ const ContactSection = () => {
                     <p className="text-muted-foreground">
                       I'll get back to you as soon as possible.
                     </p>
-                    <Button
-                      variant="outline"
-                      className="mt-4 border-primary/20 dark:border-accent/30 hover:bg-primary/5 dark:hover:bg-accent/10"
+                    <button
+                      className="mt-4 px-4 py-2 border rounded-md border-primary/20 dark:border-accent/30 hover:bg-primary/5 dark:hover:bg-accent/10"
                       onClick={() => setIsSubmitted(false)}
                     >
                       Send another message
-                    </Button>
+                    </button>
                   </div>
                 ) : (
-                  <form
-                    id="form"
-                    ref={formRef}
-                    onSubmit={handleSubmit}
-                    className="space-y-4"
-                  >
-                    <div className="space-y-2">
+                  <form id="form" className="space-y-4">
+                    <div className="field space-y-2">
                       <label
                         htmlFor="name"
                         className="text-sm font-medium text-foreground"
                       >
                         Name
                       </label>
-                      <Input
+                      <input
+                        type="text"
                         id="name"
                         name="name"
-                        placeholder="Your name"
-                        value={formData.name}
-                        onChange={(e) =>
-                          setFormData((prev) => ({
-                            ...prev,
-                            name: e.target.value,
-                          }))
-                        }
                         required
-                        className="bg-background border-input focus:ring-primary dark:focus:ring-accent"
+                        className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
                       />
                     </div>
 
-                    <div className="space-y-2">
+                    <div className="field space-y-2">
                       <label
                         htmlFor="email"
                         className="text-sm font-medium text-foreground"
                       >
                         Email
                       </label>
-                      <Input
+                      <input
+                        type="email"
                         id="email"
                         name="email"
-                        type="email"
-                        placeholder="your.email@example.com"
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData((prev) => ({
-                            ...prev,
-                            email: e.target.value,
-                          }))
-                        }
                         required
-                        className="bg-background border-input focus:ring-primary dark:focus:ring-accent"
+                        className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
                       />
                     </div>
 
-                    <div className="space-y-2">
+                    <div className="field space-y-2">
                       <label
                         htmlFor="subject"
                         className="text-sm font-medium text-foreground"
                       >
                         Subject
                       </label>
-                      <Input
+                      <input
+                        type="text"
                         id="subject"
                         name="subject"
-                        placeholder="What's this about?"
-                        value={formData.subject}
-                        onChange={(e) =>
-                          setFormData((prev) => ({
-                            ...prev,
-                            subject: e.target.value,
-                          }))
-                        }
                         required
-                        className="bg-background border-input focus:ring-primary dark:focus:ring-accent"
+                        className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
                       />
                     </div>
 
-                    <div className="space-y-2">
+                    <div className="field space-y-2">
                       <label
                         htmlFor="message"
                         className="text-sm font-medium text-foreground"
                       >
                         Message
                       </label>
-                      <Textarea
+                      <textarea
                         id="message"
                         name="message"
-                        placeholder="Tell me about your project or inquiry..."
-                        rows={5}
-                        value={formData.message}
-                        onChange={(e) =>
-                          setFormData((prev) => ({
-                            ...prev,
-                            message: e.target.value,
-                          }))
-                        }
                         required
-                        className="bg-background border-input focus:ring-primary dark:focus:ring-accent"
-                      />
+                        rows={4}
+                        className="w-full px-3 py-2 border rounded-md bg-background border-input focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent"
+                      ></textarea>
                     </div>
 
-                    {error && (
-                      <div className="p-3 rounded-md bg-destructive/10 text-destructive flex items-center gap-2 text-sm">
-                        <AlertCircle className="h-4 w-4" />
-                        {error}
-                      </div>
-                    )}
-
-                    <Button
+                    <input
                       type="submit"
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground dark:bg-accent dark:hover:bg-accent/90 dark:text-accent-foreground"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <span className="flex items-center gap-2">
-                          <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent"></div>
-                          Sending...
-                        </span>
-                      ) : (
-                        <span className="flex items-center gap-2">
-                          Send Message
-                          <Send className="h-4 w-4" />
-                        </span>
-                      )}
-                    </Button>
+                      id="button"
+                      value="Send Email"
+                      className="w-full px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground dark:bg-accent dark:hover:bg-accent/90 dark:text-accent-foreground rounded-md cursor-pointer"
+                    />
                   </form>
                 )}
               </CardContent>

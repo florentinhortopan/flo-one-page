@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -198,7 +198,7 @@ const ContactSection = () => {
             <Card className="bg-card border border-border dark:border-border/50">
               <CardHeader>
                 <CardTitle className="text-card-foreground">
-                  Get in Touch
+                  Get in Touch 3
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Interested in working together? Fill out the form below to

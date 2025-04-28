@@ -131,20 +131,12 @@ const Home = () => {
           </p>
           <div className="mt-4 flex justify-center space-x-6">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/florentinhortopan/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               LinkedIn
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Twitter
             </a>
             <a
               href="https://adplist.org/mentors/florentin-hortopan"
@@ -153,6 +145,22 @@ const Home = () => {
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               ADPList
+            </a>
+            <a
+              href="https://puxa.ai/about-puxa-team-and-mojo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Puxa AI
+            </a>
+            <a
+              href="https://stack.angellist.com/company/puxa-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              AngelList
             </a>
           </div>
         </div>

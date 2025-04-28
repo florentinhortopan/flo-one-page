@@ -12,7 +12,7 @@ interface HeroSectionProps {
 const HeroSection = ({
   name = "Florentin Hortopan",
   tagline = "UX for AI Native Companies. ",
-  description = " hyper-customizable experiences designed for trust and usability. Let's build together something amazing.",
+  description = "Hyper-customizable experiences designed for trust and usability. Let's build together something amazing.",
   imageUrl = "https://images.squarespace-cdn.com/content/v1/6238eadda6c01819e810fa34/34a93dea-8266-4c2d-83de-c7e308c95cc6/Flo.png?format=1000w",
 }: HeroSectionProps) => {
   const scrollToServices = () => {

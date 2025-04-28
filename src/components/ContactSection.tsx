@@ -70,17 +70,20 @@ const ContactSection = () => {
           const serviceID = "default_service";
           const templateID = "template_ygm5p7s";
 
+          // @ts-ignore - EmailJS is loaded from CDN
           emailjs.sendForm(serviceID, templateID, this).then(
             () => {
               btn.value = "Send Email";
               btn.disabled = false;
               setIsSubmitted(true);
+              alert("Sent!");
             },
             (err) => {
               btn.value = "Send Email";
               btn.disabled = false;
               setError("Failed to send your message. Please try again later.");
               console.error("EmailJS error:", err);
+              alert(JSON.stringify(err));
             },
           );
         });
@@ -93,7 +96,7 @@ const ContactSection = () => {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [isSubmitted]);
+  }, []);
 
   const testimonials: TestimonialProps[] = [
     {
@@ -180,7 +183,7 @@ const ContactSection = () => {
             <Card className="bg-card border border-border dark:border-border/50">
               <CardHeader>
                 <CardTitle className="text-card-foreground">
-                  Get in Touch 4
+                  Get in Touch
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Interested in working together? Fill out the form below to

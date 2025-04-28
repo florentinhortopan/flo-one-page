@@ -76,20 +76,6 @@ const Home = () => {
           </motion.div>
         </section>
 
-        {/* AI Assistant Section */}
-        <section id="ai-assistant" className="py-20 bg-muted/50">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="max-w-7xl mx-auto px-6">
-              <AIAssistantSection />
-            </div>
-          </motion.div>
-        </section>
-
         {/* Expertise Section */}
         <section id="expertise" className="py-20 bg-white">
           <motion.div
@@ -100,6 +86,20 @@ const Home = () => {
           >
             <div className="max-w-7xl mx-auto px-6">
               <ExpertiseSection />
+            </div>
+          </motion.div>
+        </section>
+
+        {/* AI Assistant Section */}
+        <section id="ai-assistant" className="py-20 bg-muted/50">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="max-w-7xl mx-auto px-6">
+              <AIAssistantSection />
             </div>
           </motion.div>
         </section>

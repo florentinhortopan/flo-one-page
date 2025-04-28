@@ -224,6 +224,7 @@ const ContactSection = () => {
                   </div>
                 ) : (
                   <form
+                    id="form"
                     ref={formRef}
                     onSubmit={handleSubmit}
                     className="space-y-4"

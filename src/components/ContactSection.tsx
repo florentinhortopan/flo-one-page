@@ -237,7 +237,7 @@ const ContactSection = () => {
                       </label>
                       <Input
                         id="name"
-                        name="from_name"
+                        name="name"
                         placeholder="Your name"
                         value={formData.name}
                         onChange={(e) =>
@@ -260,7 +260,7 @@ const ContactSection = () => {
                       </label>
                       <Input
                         id="email"
-                        name="reply_to"
+                        name="email"
                         type="email"
                         placeholder="your.email@example.com"
                         value={formData.email}

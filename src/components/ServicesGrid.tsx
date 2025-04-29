@@ -73,7 +73,7 @@ const ServicesGrid = () => {
       icon: <Palette className="w-6 h-6 text-primary dark:text-accent" />,
       title: "Documentation",
       description:
-        "Develop internal GPTs and generate stories, examples, and links to deliver persistent and always updated relevant information for your team.",
+        "Develop internal GPTs and generate stories, examples, and links to deliver persistent, always updated and relevant information for your team.",
     },
     {
       icon: <Compass className="w-6 h-6 text-primary dark:text-accent" />,
@@ -91,7 +91,7 @@ const ServicesGrid = () => {
       icon: <BookOpen className="w-6 h-6 text-primary dark:text-accent" />,
       title: "AI Ethics & A11y",
       description:
-        "Systematically assess, ethical and accessibility gaps, applying inclusive, AI transparency methods to ensure trust, equity, and usability.",
+        "Systematically assess ethical and accessibility gaps, then apply inclusive, AI transparency methods to ensure trust, equity, and usability.",
     },
     {
       icon: <Settings className="w-6 h-6 text-primary dark:text-accent" />,

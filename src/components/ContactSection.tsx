@@ -72,7 +72,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-20 px-4 bg-background">
-      <div className="container mx-auto max-w-[95%] sm:max-w-6xl">
+      <div className="container mx-auto max-w-[99%] px-0 sm:px-8 sm:max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Mentorship Section */}
           <div>

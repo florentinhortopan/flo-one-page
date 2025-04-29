@@ -78,17 +78,10 @@ const ContactSection = () => {
             .then(
               () => {
                 btn.value = "Send Email";
-                btn.disabled = false;
-                setIsSubmitted(true);
                 alert("Sent!");
               },
               (err) => {
                 btn.value = "Send Email";
-                btn.disabled = false;
-                setError(
-                  "Failed to send your message. Please try again later.",
-                );
-                console.error("EmailJS error:", err);
                 alert(JSON.stringify(err));
               },
             );

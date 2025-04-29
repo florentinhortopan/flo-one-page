@@ -79,7 +79,7 @@ const HeroSection = ({
 
             {/* Company Logos Row */}
             <div className="mt-8 lg:mt-10">
-              <LogosRow companies={companies} />
+              <LogosRow />
             </div>
           </div>
 

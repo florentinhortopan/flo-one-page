@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail } from "lucide-react";
+import LogosRow from "./LogosRow";
 
 interface HeroSectionProps {
   name?: string;
@@ -30,6 +31,14 @@ const HeroSection = ({
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Company data for logos
+  const companies = [
+    { name: "Critical Mass" },
+    { name: "Airbnb" },
+    { name: "Gap Inc." },
+    { name: "GoPro" },
+  ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-background py-20 px-4 md:px-8 lg:px-12">
@@ -66,6 +75,11 @@ const HeroSection = ({
                 <ArrowDown className="mr-2 h-4 w-4" />
                 Explore Services
               </Button>
+            </div>
+
+            {/* Company Logos Row */}
+            <div className="mt-8 lg:mt-10">
+              <LogosRow companies={companies} />
             </div>
           </div>
 

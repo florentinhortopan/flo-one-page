@@ -55,49 +55,49 @@ const ServicesGrid = () => {
       icon: <Layers className="w-6 h-6 text-primary dark:text-accent" />,
       title: "Design Systems Architecture",
       description:
-        "Building scalable design systems that maintain consistency across products and platforms.",
+        "Build scalable, AI first design systems that maintain consistency across products, platforms, and brands. Designer first, intent based semantics.",
     },
     {
       icon: <Code className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "Semantics",
+      title: "Training Design Teams",
       description:
-        "Creating meaningful and intuitive naming conventions and structures for design components.",
+        "Shift the designer’s role from crafting fixed paths to curating flexible, adaptive systems—balancing visibility and control.",
     },
     {
       icon: <Briefcase className="w-6 h-6 text-primary dark:text-accent" />,
       title: "UX for AI Products",
       description:
-        "Specialized design expertise for AI-powered products and interfaces that are intuitive and human-centered.",
+        "Guide users through ambiguity, and ensure ethical, context-aware interactions with dynamic systems, and avoid AI aversion or overreliance.",
     },
     {
       icon: <Palette className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "Multi-brand Systems",
+      title: "AI powered documentation",
       description:
-        "Developing flexible design systems that support multiple brands while maintaining core principles.",
+        "Develop internal GPTs and generate stories, examples, and links to deliver persistent and always updated relevant information for your team.",
     },
     {
       icon: <Compass className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "UX Strategy",
+      title: "Content Strategy",
       description:
-        "Crafting comprehensive UX strategies aligned with business goals and user needs.",
+        "Not just generate or optimize content, but orchestrate the right content, for the right user, at the right moment.",
     },
     {
       icon: <Users className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "Design Team Building",
+      title: "AI & Design Team Building",
       description:
-        "Building and scaling effective design teams with the right skills and culture.",
+        "Build and scale effective design teams with the right skills and culture, using new tools and processes to improve efficiency and output quality.",
     },
     {
       icon: <BookOpen className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "OnBoarding",
+      title: "AI Ethics & A11y",
       description:
-        "Creating smooth onboarding processes for new design team members and stakeholders.",
+        "Systematically assess, ethical and accessibility gaps, applying inclusive, AI transparency methods to ensure trust, equity, and usability.",
     },
     {
       icon: <Settings className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "Design Operations",
+      title: "New Design Workflows",
       description:
-        "Optimizing design workflows, tools, and processes to improve efficiency and output quality.",
+        "Create AI-integrated design workflows that are faster, more adaptive, and centered on user intent. From prompting to vibe coding.",
     },
   ];
 

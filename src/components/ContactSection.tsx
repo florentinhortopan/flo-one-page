@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Send, Star, AlertCircle } from "lucide-react";
+import { ExternalLink, Send, Star, AlertCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface TestimonialProps {
@@ -51,63 +51,6 @@ const Testimonial = ({
 };
 
 const ContactSection = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Initialize EmailJS form handling
-    const initEmailJS = () => {
-      const btn = document.getElementById("button");
-      const form = document.getElementById("form");
-
-      if (form && btn) {
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          if (btn instanceof HTMLInputElement) {
-            btn.value = "Sending...";
-            btn.disabled = true;
-
-            const serviceID = "default_service";
-            const templateID = "template_ygm5p7s";
-
-            // @ts-ignore - EmailJS is loaded from CDN
-            emailjs
-              .sendForm(serviceID, templateID, this, {
-                publicKey: "mwwQi5lTD0VvQkSim", // EmailJS public key
-                to_email: "florentinhortopan@gmail.com", // Replace with your actual email
-              })
-              .then(
-                () => {
-                  if (btn instanceof HTMLInputElement) {
-                    btn.value = "Send Email";
-                    btn.disabled = false;
-                  }
-                  alert("Sent!");
-                  setIsSubmitted(true);
-                },
-                (err) => {
-                  if (btn instanceof HTMLInputElement) {
-                    btn.value = "Send Email";
-                    btn.disabled = false;
-                  }
-                  setError(err.text || "Failed to send message");
-                  alert(JSON.stringify(err));
-                },
-              );
-          }
-        });
-      }
-    };
-
-    // Small timeout to ensure the DOM is fully loaded
-    const timer = setTimeout(() => {
-      initEmailJS();
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   const testimonials: TestimonialProps[] = [
     {
       name: "Alex Chen",
@@ -188,86 +131,66 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Calendly Widget */}
           <div>
-            <Card className="bg-card border border-border dark:border-border/50">
+            <h2 className="text-3xl font-bold mb-6 text-foreground">
+              Schedule a Meeting
+            </h2>
+            <Card className="bg-card border border-border dark:border-border/50 mb-6">
               <CardHeader>
                 <CardTitle className="text-card-foreground">
-                  Get in Touch
+                  Book a Time Slot
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
-                  Interested in working together? Fill out the form below to
-                  start a conversation.
+                  Book a time to discuss how we can work together on your next
+                  project.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                {isSubmitted ? (
-                  <div className="text-center py-8">
-                    <h3 className="text-xl font-semibold mb-2 text-card-foreground">
-                      Thank you for reaching out!
-                    </h3>
-                    <p className="text-muted-foreground">
-                      I'll get back to you as soon as possible.
-                    </p>
-                    <button
-                      className="mt-4 px-4 py-2 border rounded-md border-primary/20 dark:border-accent/30 hover:bg-primary/5 dark:hover:bg-accent/10"
-                      onClick={() => setIsSubmitted(false)}
-                    >
-                      Send another message
-                    </button>
-                  </div>
-                ) : (
-                  <form id="form" className="space-y-4">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        name="from_name"
-                        id="name"
-                        className="w-full p-2 border rounded-md bg-background"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        name="reply_to"
-                        id="email"
-                        className="w-full p-2 border rounded-md bg-background"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">
-                        Message
-                      </label>
-                      <textarea
-                        name="message"
-                        id="message"
-                        rows={4}
-                        className="w-full p-2 border rounded-md bg-background"
-                        required
-                      ></textarea>
-                    </div>
-                    <input
-                      type="submit"
-                      id="button"
-                      value="Send Email"
-                      className="w-full py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 cursor-pointer"
-                    />
-                    {error && (
-                      <div className="flex items-center gap-2 text-destructive text-sm mt-2">
-                        <AlertCircle className="h-4 w-4" />
-                        {error}
-                      </div>
-                    )}
-                  </form>
-                )}
+                <div className="w-full h-[520px] overflow-hidden rounded-md">
+                  <iframe
+                    src="https://calendly.com/florentinhortopan/flo-ux-ai-15-minutes?back=1&month=2025-04"
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    title="Schedule a meeting with Florentin"
+                  ></iframe>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Email Contact Card - New Row */}
+        <div className="mt-12 flex justify-center">
+          <div className="max-w-md w-full">
+            <Card className="bg-card border border-border dark:border-border/50">
+              <CardHeader>
+                <CardTitle className="text-card-foreground">
+                  Send Flo an Email
+                </CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Prefer to communicate via email? Send me a message directly.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-col items-center justify-center p-4">
+                  <Mail className="h-12 w-12 text-primary mb-4" />
+                  <p className="text-center mb-4 text-muted-foreground">
+                    I'll get back to you as soon as possible, usually within
+                    24-48 hours.
+                  </p>
+                  <Button
+                    variant="default"
+                    className="flex items-center gap-2"
+                    asChild
+                  >
+                    <a href="mailto:florentin.hortopan@gmail.com">
+                      <Mail className="h-4 w-4" />
+                      Contact via Email
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>

@@ -57,34 +57,45 @@ const ContactSection = () => {
   useEffect(() => {
     // Initialize EmailJS form handling
     const initEmailJS = () => {
-      const form = document.getElementById("form") as HTMLFormElement;
-      const btn = document.getElementById("button") as HTMLInputElement;
+      const btn = document.getElementById("button");
+      const form = document.getElementById("form");
 
       if (form && btn) {
         form.addEventListener("submit", function (event) {
           event.preventDefault();
 
-          btn.value = "Sending...";
-          btn.disabled = true;
+          if (btn instanceof HTMLInputElement) {
+            btn.value = "Sending...";
+            btn.disabled = true;
 
-          const serviceID = "default_service";
-          const templateID = "template_ygm5p7s";
+            const serviceID = "default_service";
+            const templateID = "template_ygm5p7s";
 
-          // @ts-ignore - EmailJS is loaded from CDN
-          emailjs
-            .sendForm(serviceID, templateID, this, {
-              to_email: "florentinhortopan@gmail.com", // Replace with your actual email
-            })
-            .then(
-              () => {
-                btn.value = "Send Email";
-                alert("Sent!");
-              },
-              (err) => {
-                btn.value = "Send Email";
-                alert(JSON.stringify(err));
-              },
-            );
+            // @ts-ignore - EmailJS is loaded from CDN
+            emailjs
+              .sendForm(serviceID, templateID, this, {
+                publicKey: "YOUR_PUBLIC_KEY", // Add your EmailJS public key here
+                to_email: "florentin.hortopan@example.com", // Replace with your actual email
+              })
+              .then(
+                () => {
+                  if (btn instanceof HTMLInputElement) {
+                    btn.value = "Send Email";
+                    btn.disabled = false;
+                  }
+                  alert("Sent!");
+                  setIsSubmitted(true);
+                },
+                (err) => {
+                  if (btn instanceof HTMLInputElement) {
+                    btn.value = "Send Email";
+                    btn.disabled = false;
+                  }
+                  setError(err.text || "Failed to send message");
+                  alert(JSON.stringify(err));
+                },
+              );
+          }
         });
       }
     };
@@ -182,7 +193,7 @@ const ContactSection = () => {
             <Card className="bg-card border border-border dark:border-border/50">
               <CardHeader>
                 <CardTitle className="text-card-foreground">
-                  Get in Touch 5
+                  Get in Touch
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Interested in working together? Fill out the form below to

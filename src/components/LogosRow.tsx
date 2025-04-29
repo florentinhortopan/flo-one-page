@@ -10,10 +10,22 @@ interface LogosRowProps {
 
 const LogosRow = ({
   companies = [
-    { name: "Critical Mass", logo: "https://i.imgur.com/Yx9QQzl.png" },
-    { name: "Airbnb", logo: "https://i.imgur.com/Yx9QQzk.png" },
-    { name: "Gap Inc.", logo: "https://i.imgur.com/Yx9QQzm.png" },
-    { name: "GoPro", logo: "https://i.imgur.com/Yx9QQzj.png" },
+    {
+      name: "Critical Mass",
+      logo: "http://puxa.ai/wp-content/uploads/2025/04/critical_mass_logo.jpeg",
+    },
+    {
+      name: "Airbnb",
+      logo: "http://puxa.ai/wp-content/uploads/2025/04/airbnb.png",
+    },
+    {
+      name: "Gap Inc.",
+      logo: "http://puxa.ai/wp-content/uploads/2025/04/logo-horizontal-1.png",
+    },
+    {
+      name: "GoPro",
+      logo: "http://puxa.ai/wp-content/uploads/2025/04/gopro.png",
+    },
   ],
 }: LogosRowProps) => {
   // Animation variants
@@ -33,12 +45,12 @@ const LogosRow = ({
   };
 
   // Function to generate a logo placeholder based on company name
-  const getLogoUrl = (name: string) => {
-    // This creates a simple text-based logo using DiceBear
-    return `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(
-      name,
-    )}&backgroundColor=e5e7eb&fontFamily=Arial&fontSize=36`;
-  };
+  //const getLogoUrl = (name: string) => {
+  // This creates a simple text-based logo using DiceBear
+  // return `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(
+  //   name,
+  // )}&backgroundColor=e5e7eb&fontFamily=Arial&fontSize=36`;
+  //};
 
   return (
     <div className="w-full mt-8 py-4">
@@ -53,9 +65,12 @@ const LogosRow = ({
           <motion.div key={index} variants={itemVariants}>
             <div className="w-12 h-12 md:w-16 md:h-16 bg-muted/30 rounded-full flex items-center justify-center p-2 border border-primary/10 dark:border-accent/10">
               <img
-                src={company.logo || getLogoUrl(company.name)}
+                src={company.logo}
                 alt={`${company.name} logo`}
                 className="w-full h-full object-contain"
+                onError={(e) => {
+                  console.error(`Failed to load logo for ${company.name}`);
+                }}
               />
             </div>
           </motion.div>

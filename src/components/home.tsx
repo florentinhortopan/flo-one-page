@@ -13,7 +13,13 @@ const Home = () => {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass-nav py-4 px-0 sm:px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="font-bold text-xl">Florentin Hortopan</div>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="font-bold text-xl hover:text-primary transition-colors cursor-pointer"
+            aria-label="Scroll to top"
+          >
+            Florentin Hortopan
+          </button>
           <div className="hidden md:flex items-center space-x-6">
             <a
               href="#services"

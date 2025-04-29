@@ -88,7 +88,7 @@ const HeroSection = ({
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/20 dark:border-accent/30 shadow-xl">
               <img
                 src={imageUrl}
-                alt={name}
+                alt={`${name} - UX Design Consultant for AI-Powered Companies`}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent dark:from-black/60"></div>

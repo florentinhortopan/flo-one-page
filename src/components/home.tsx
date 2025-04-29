@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-nav py-4 px-6">
+      <nav className="fixed top-0 left-0 right-0 z-50 glass-nav py-4 px-0 sm:px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="font-bold text-xl">Florentin Hortopan</div>
           <div className="hidden md:flex items-center space-x-6">
@@ -70,7 +70,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-0 sm:px-6">
               <ServicesGrid />
             </div>
           </motion.div>
@@ -84,7 +84,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-0 sm:px-6">
               <ExpertiseSection />
             </div>
           </motion.div>
@@ -98,7 +98,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-0 sm:px-6">
               <AIAssistantSection />
             </div>
           </motion.div>
@@ -112,7 +112,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-0 sm:px-6">
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                 Mentorship & Contact
               </h2>
@@ -124,7 +124,7 @@ const Home = () => {
 
       {/* Footer */}
       <footer className="bg-muted py-10">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+        <div className="max-w-7xl mx-auto px-0 sm:px-6 text-center">
           <p className="text-muted-foreground">
             © {new Date().getFullYear()} Florentin Hortopan. All rights
             reserved.

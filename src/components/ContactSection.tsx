@@ -74,8 +74,8 @@ const ContactSection = () => {
             // @ts-ignore - EmailJS is loaded from CDN
             emailjs
               .sendForm(serviceID, templateID, this, {
-                publicKey: "YOUR_PUBLIC_KEY", // Add your EmailJS public key here
-                to_email: "florentin.hortopan@example.com", // Replace with your actual email
+                publicKey: "mwwQi5lTD0VvQkSim", // EmailJS public key
+                to_email: "florentinhortopan@gmail.com", // Replace with your actual email
               })
               .then(
                 () => {

@@ -182,7 +182,7 @@ const ContactSection = () => {
             <Card className="bg-card border border-border dark:border-border/50">
               <CardHeader>
                 <CardTitle className="text-card-foreground">
-                  Get in Touch
+                  Get in Touch 5
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
                   Interested in working together? Fill out the form below to

@@ -53,7 +53,7 @@ const ServicesGrid = () => {
   const services = [
     {
       icon: <Layers className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "Design Systems Architecture",
+      title: "Design Systems",
       description:
         "Build scalable, AI first design systems that maintain consistency across products, platforms, and brands. Designer first, intent based semantics.",
     },
@@ -71,7 +71,7 @@ const ServicesGrid = () => {
     },
     {
       icon: <Palette className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "AI powered documentation",
+      title: "Documentation",
       description:
         "Develop internal GPTs and generate stories, examples, and links to deliver persistent and always updated relevant information for your team.",
     },
@@ -83,7 +83,7 @@ const ServicesGrid = () => {
     },
     {
       icon: <Users className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "AI & Design Team Building",
+      title: "AI+UX Team Building",
       description:
         "Build and scale effective design teams with the right skills and culture, using new tools and processes to improve efficiency and output quality.",
     },

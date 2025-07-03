@@ -77,9 +77,9 @@ const ServicesGrid = () => {
     },
     {
       icon: <Compass className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "Content Strategy",
+      title: "Design Automation",
       description:
-        "Not just generate or optimize content, but orchestrate the right content, for the right user, at the right moment.",
+        "Use the power of AI to generate, iterate, and deploy not only prototypes but functioning apps and services.",
     },
     {
       icon: <Users className="w-6 h-6 text-primary dark:text-accent" />,
@@ -95,7 +95,7 @@ const ServicesGrid = () => {
     },
     {
       icon: <Settings className="w-6 h-6 text-primary dark:text-accent" />,
-      title: "New Design Workflows",
+      title: "New Design Team Workflows",
       description:
         "Create AI-integrated design workflows that are faster, more adaptive, and centered on user intent. From prompting to vibe coding.",
     },

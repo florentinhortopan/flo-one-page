@@ -12,19 +12,19 @@ const LogosRow = ({
   companies = [
     {
       name: "Critical Mass",
-      logo: "http://puxa.ai/wp-content/uploads/2025/04/critical_mass_logo.jpeg",
+      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=200&fit=crop&crop=center",
     },
     {
       name: "Airbnb",
-      logo: "http://puxa.ai/wp-content/uploads/2025/04/airbnb.png",
+      logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=200&fit=crop&crop=center",
     },
     {
       name: "Gap Inc.",
-      logo: "http://puxa.ai/wp-content/uploads/2025/04/logo-horizontal-1.png",
+      logo: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=200&h=200&fit=crop&crop=center",
     },
     {
       name: "GoPro",
-      logo: "http://puxa.ai/wp-content/uploads/2025/04/gopro.png",
+      logo: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=200&h=200&fit=crop&crop=center",
     },
   ],
 }: LogosRowProps) => {

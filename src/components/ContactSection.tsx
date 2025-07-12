@@ -149,7 +149,7 @@ const ContactSection = () => {
               <CardContent>
                 <div className="w-full h-[520px] overflow-hidden rounded-md mx-auto">
                   <iframe
-                    src="https://calendly.com/florentinhortopan/flo-ux-ai-15-minutes?back=1&month=2025-04"
+                    src="https://calendly.com/florentinhortopan/flo-puxa-ai-30-mins"
                     width="100%"
                     height="100%"
                     frameBorder="0"

@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 10%;
+
+    --primary: 220 90% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 350 80% 55%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 45 90% 55%;
+    --accent-foreground: 220 10% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 85%;
+    --input: 220 20% 85%;
+    --ring: 220 90% 50%;
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    /* Warm dark theme colors */
+    --background: 20 15% 12%; /* Warm dark brown */
+    --foreground: 40 30% 92%; /* Warm off-white */
+
+    --card: 25 15% 15%; /* Slightly lighter warm brown */
+    --card-foreground: 40 30% 92%;
+
+    --popover: 25 15% 15%;
+    --popover-foreground: 40 30% 92%;
+
+    --primary: 220 70% 50%; /* Keep primary but slightly muted */
+    --primary-foreground: 40 30% 92%;
+
+    --secondary: 350 70% 50%; /* Warmer red */
+    --secondary-foreground: 40 30% 92%;
+
+    --muted: 20 10% 20%; /* Muted warm brown */
+    --muted-foreground: 40 20% 70%; /* Warm gray */
+
+    --accent: 35 80% 50%; /* Warm gold/amber */
+    --accent-foreground: 20 15% 12%;
+
+    --destructive: 0 70% 35%; /* Warmer destructive red */
+    --destructive-foreground: 40 30% 92%;
+
+    --border: 20 15% 25%; /* Warm dark border */
+    --input: 20 15% 25%;
+    --ring: 35 80% 50%; /* Match accent for rings */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-glass-light backdrop-blur-md border border-white/20 shadow-lg dark:bg-glass-dark dark:border-white/5;
+  }
+
+  .glass-nav {
+    @apply bg-glass-medium backdrop-blur-lg border-b border-white/10 dark:bg-glass-dark/80 dark:border-white/5;
+  }
+
+  .bauhaus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .bauhaus-border {
+    @apply border-2 border-bauhaus-black;
+  }
+
+  .bauhaus-circle {
+    @apply rounded-full bg-bauhaus-blue text-white flex items-center justify-center;
+  }
+
+  .bauhaus-square {
+    @apply rounded-none bg-bauhaus-red text-white flex items-center justify-center;
+  }
+
+  .bauhaus-triangle {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bauhaus-triangle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 50px 0 0;
+    border-color: theme("colors.bauhaus.yellow") transparent transparent
+      transparent;
+    z-index: 0;
+  }
+}

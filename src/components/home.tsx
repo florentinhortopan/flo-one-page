@@ -153,7 +153,7 @@ const Home = () => {
               ADPList
             </a>
             <a
-              href="https://puxa.ai/about-puxa-team-and-mojo/"
+              href="https://puxa.ai/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"

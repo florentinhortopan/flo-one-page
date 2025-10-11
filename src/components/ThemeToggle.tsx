@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Zap, Heart } from "lucide-react";
 import { Switch } from "./ui/switch";
 
 interface ThemeToggleProps {
@@ -36,14 +36,43 @@ export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
   };
 
   return (
-    <div className={`flex items-center space-x-2 ${className}`}>
-      <Sun size={18} className="text-accent dark:text-muted-foreground" />
+    <div className={`flex items-center space-x-3 ${className}`}>
+      {/* Punk Icon (Lightning) */}
+      <div className="relative group">
+        <Zap 
+          size={20} 
+          className={`transition-all duration-300 ${
+            isDarkMode 
+              ? 'text-muted-foreground opacity-50' 
+              : 'text-primary fill-primary animate-pulse'
+          }`}
+        />
+        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-display font-bold uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+          Punk
+        </span>
+      </div>
+      
       <Switch
         checked={isDarkMode}
         onCheckedChange={toggleTheme}
-        aria-label="Toggle dark mode"
+        aria-label="Toggle between Punk and Grunge themes"
+        className="data-[state=checked]:bg-grunge-burgundy"
       />
-      <Moon size={18} className="text-muted-foreground dark:text-accent" />
+      
+      {/* Grunge Icon (Heart/Rose) */}
+      <div className="relative group">
+        <Heart 
+          size={20}
+          className={`transition-all duration-300 ${
+            isDarkMode 
+              ? 'text-grunge-burgundy fill-grunge-burgundy animate-pulse' 
+              : 'text-muted-foreground opacity-50'
+          }`}
+        />
+        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-display font-bold uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap dark:font-serif">
+          Grunge
+        </span>
+      </div>
     </div>
   );
 }

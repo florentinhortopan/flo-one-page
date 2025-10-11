@@ -27,24 +27,37 @@ interface ServiceCardProps {
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
   return (
     <motion.div
-      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+      whileHover={{ 
+        y: -8, 
+        rotate: 2,
+        transition: { duration: 0.3, type: "spring", stiffness: 300 } 
+      }}
       className="h-full"
     >
-      <Card className="h-full bg-card hover:shadow-lg transition-shadow duration-300 border border-border dark:border-border/50">
-        <CardHeader>
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 dark:bg-accent/20 mb-4">
-            {icon}
+      <div className="punk-card h-full bg-card p-6 relative group overflow-hidden">
+        {/* Animated background accent */}
+        <div className="absolute top-0 right-0 w-20 h-20 bg-primary transform translate-x-10 -translate-y-10 rotate-45 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
+        <div className="absolute bottom-0 left-0 w-16 h-16 bg-secondary transform -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
+        
+        <div className="relative z-10">
+          <div className="flex items-center justify-center w-16 h-16 bg-accent border-4 border-foreground mb-4 transform -rotate-6 group-hover:rotate-0 transition-transform duration-300"
+               style={{ clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)' }}>
+            <div className="text-accent-foreground transform scale-110">
+              {icon}
+            </div>
           </div>
-          <CardTitle className="text-xl text-card-foreground">
+          <h3 className="text-xl font-display font-bold uppercase text-card-foreground mb-3 tracking-tight border-b-4 border-primary pb-2 group-hover:border-accent transition-colors">
             {title}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <CardDescription className="text-sm text-muted-foreground">
+          </h3>
+          <p className="text-sm font-semibold text-foreground leading-relaxed">
             {description}
-          </CardDescription>
-        </CardContent>
-      </Card>
+          </p>
+        </div>
+        
+        {/* Corner decoration */}
+        <div className="absolute top-2 right-2 w-4 h-4 border-t-4 border-r-4 border-accent"></div>
+        <div className="absolute bottom-2 left-2 w-4 h-4 border-b-4 border-l-4 border-secondary"></div>
+      </div>
     </motion.div>
   );
 };
@@ -102,21 +115,27 @@ const ServicesGrid = () => {
   ];
 
   return (
-    <section id="services" className="py-20 px-4 bg-muted dark:bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="py-20 px-4 bg-background punk-stripes relative overflow-hidden">
+      {/* Punk background elements */}
+      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+      <div className="absolute bottom-0 right-0 w-full h-2 bg-gradient-to-r from-accent via-secondary to-primary"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, type: "spring" }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-            My Services
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Specialized expertise to elevate your product design and user
-            experience
+          <div className="inline-block mb-6">
+            <h2 className="text-4xl md:text-6xl font-display font-black uppercase text-foreground border-8 border-foreground bg-primary text-primary-foreground px-8 py-4 transform -rotate-2 hover:rotate-0 transition-transform duration-300"
+                style={{ boxShadow: '8px 8px 0px hsl(var(--foreground))' }}>
+              My Services
+            </h2>
+          </div>
+          <p className="text-xl font-bold text-foreground max-w-2xl mx-auto bg-accent/20 p-4 border-4 border-foreground">
+            SPECIALIZED EXPERTISE TO ELEVATE YOUR PRODUCT DESIGN
           </p>
         </motion.div>
 

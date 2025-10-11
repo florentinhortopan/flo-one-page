@@ -18,8 +18,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        display: ["Poppins", "sans-serif"],
+        sans: ["'Space Grotesk'", "'Courier New'", "monospace"],
+        display: ["'Bebas Neue'", "'Impact'", "sans-serif"],
+        mono: ["'Courier New'", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -55,25 +56,32 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Bauhaus-inspired colors
-        bauhaus: {
-          red: "#E53935",
-          blue: "#1E88E5",
-          yellow: "#FDD835",
-          black: "#212121",
-          white: "#FFFFFF",
+        // Punk-inspired colors
+        punk: {
+          pink: "hsl(var(--punk-pink))",
+          cyan: "hsl(var(--punk-cyan))",
+          yellow: "hsl(var(--punk-yellow))",
+          green: "hsl(var(--punk-green))",
+          purple: "hsl(var(--punk-purple))",
+          orange: "hsl(var(--punk-orange))",
         },
-        glass: {
-          light: "rgba(255, 255, 255, 0.25)",
-          medium: "rgba(255, 255, 255, 0.15)",
-          dark: "rgba(20, 15, 12, 0.75)" /* Warm dark background for dark mode */,
+        // Grunge-inspired colors (dark mode)
+        grunge: {
+          burgundy: "hsl(var(--grunge-burgundy))",
+          purple: "hsl(var(--grunge-purple))",
+          sage: "hsl(var(--grunge-sage))",
+          rust: "hsl(var(--grunge-rust))",
+          gold: "hsl(var(--grunge-gold))",
+          mauve: "hsl(var(--grunge-mauve))",
+          cream: "hsl(var(--grunge-cream))",
+          charcoal: "hsl(var(--grunge-charcoal))",
         },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-        none: "0", // Bauhaus often uses sharp edges
+        none: "0", // Punk uses sharp edges
       },
       keyframes: {
         "accordion-down": {
@@ -88,9 +96,16 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "punk-bounce": "punk-bounce 2s ease-in-out infinite",
+        "punk-shake": "punk-shake 0.5s ease-in-out",
+        "punk-spin": "punk-spin 3s linear infinite",
+        "punk-color-shift": "punk-color-shift 5s ease-in-out infinite",
+        "glitch-skew": "glitch-skew 3s infinite linear alternate-reverse",
+        "neon-flicker": "neon-flicker 3s infinite alternate",
+        "neon-pulse": "neon-pulse 2s infinite alternate",
       },
       backgroundImage: {
-        "bauhaus-pattern": "url('/bauhaus-pattern.svg')",
+        "punk-gradient": "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%)",
       },
     },
   },

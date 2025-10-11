@@ -4,66 +4,85 @@
 
 @layer base {
   :root {
-    --background: 220 20% 97%;
-    --foreground: 220 10% 10%;
+    /* Punk Light Theme - Bold & Edgy */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 10% 10%;
+    --card-foreground: 0 0% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 10%;
+    --popover-foreground: 0 0% 5%;
 
-    --primary: 220 90% 50%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 340 100% 50%; /* Hot Pink/Magenta */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 350 80% 55%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 180 100% 50%; /* Electric Cyan */
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 220 10% 94%;
-    --muted-foreground: 220 10% 40%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 45 90% 55%;
-    --accent-foreground: 220 10% 10%;
+    --accent: 60 100% 50%; /* Electric Yellow */
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 85%;
-    --input: 220 20% 85%;
-    --ring: 220 90% 50%;
+    --border: 0 0% 15%;
+    --input: 0 0% 85%;
+    --ring: 340 100% 50%;
 
-    --radius: 1rem;
+    --radius: 0rem; /* Sharp punk edges */
+    
+    /* Punk specific colors */
+    --punk-pink: 340 100% 50%;
+    --punk-cyan: 180 100% 50%;
+    --punk-yellow: 60 100% 50%;
+    --punk-green: 120 100% 40%;
+    --punk-purple: 280 100% 50%;
+    --punk-orange: 30 100% 50%;
   }
 
   .dark {
-    /* Warm dark theme colors */
-    --background: 20 15% 12%; /* Warm dark brown */
-    --foreground: 40 30% 92%; /* Warm off-white */
+    /* Grunge Theme - Dark, Romantic, Elegant */
+    --background: 25 20% 12%; /* Deep warm brown */
+    --foreground: 30 15% 92%; /* Warm off-white */
 
-    --card: 25 15% 15%; /* Slightly lighter warm brown */
-    --card-foreground: 40 30% 92%;
+    --card: 25 18% 16%; /* Slightly lighter warm brown */
+    --card-foreground: 30 15% 92%;
 
-    --popover: 25 15% 15%;
-    --popover-foreground: 40 30% 92%;
+    --popover: 25 18% 14%;
+    --popover-foreground: 30 15% 92%;
 
-    --primary: 220 70% 50%; /* Keep primary but slightly muted */
-    --primary-foreground: 40 30% 92%;
+    --primary: 340 60% 45%; /* Deep burgundy/wine */
+    --primary-foreground: 30 15% 95%;
 
-    --secondary: 350 70% 50%; /* Warmer red */
-    --secondary-foreground: 40 30% 92%;
+    --secondary: 280 40% 35%; /* Deep elegant purple */
+    --secondary-foreground: 30 15% 95%;
 
-    --muted: 20 10% 20%; /* Muted warm brown */
-    --muted-foreground: 40 20% 70%; /* Warm gray */
+    --muted: 25 15% 22%; /* Muted warm brown */
+    --muted-foreground: 30 12% 70%; /* Warm muted gray */
 
-    --accent: 35 80% 50%; /* Warm gold/amber */
-    --accent-foreground: 20 15% 12%;
+    --accent: 150 30% 40%; /* Forest/sage green */
+    --accent-foreground: 30 15% 95%;
 
-    --destructive: 0 70% 35%; /* Warmer destructive red */
-    --destructive-foreground: 40 30% 92%;
+    --destructive: 0 50% 40%; /* Deep red */
+    --destructive-foreground: 30 15% 95%;
 
-    --border: 20 15% 25%; /* Warm dark border */
-    --input: 20 15% 25%;
-    --ring: 35 80% 50%; /* Match accent for rings */
+    --border: 30 20% 35%; /* Warm muted border */
+    --input: 25 18% 20%;
+    --ring: 340 60% 45%; /* Match primary */
+    
+    /* Grunge specific colors */
+    --grunge-burgundy: 340 60% 45%;
+    --grunge-purple: 280 40% 35%;
+    --grunge-sage: 150 30% 40%;
+    --grunge-rust: 20 45% 40%;
+    --grunge-gold: 45 35% 50%;
+    --grunge-mauve: 320 30% 45%;
+    --grunge-cream: 40 25% 85%;
+    --grunge-charcoal: 25 15% 18%;
   }
 }
 
@@ -77,6 +96,8 @@
       "rlig" 1,
       "calt" 1;
   }
+  
+  /* Light mode (Punk) typography */
   h1,
   h2,
   h3,
@@ -85,51 +106,460 @@
   h6 {
     @apply font-display font-bold;
   }
+  
+  /* Dark mode (Grunge) typography - more elegant */
+  .dark h1,
+  .dark h2,
+  .dark h3 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  
+  .dark h4,
+  .dark h5,
+  .dark h6 {
+    font-family: 'Crimson Text', 'Georgia', serif;
+    font-weight: 600;
+  }
+  
+  .dark body {
+    font-family: 'Lora', 'Georgia', serif;
+  }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-glass-light backdrop-blur-md border border-white/20 shadow-lg dark:bg-glass-dark dark:border-white/5;
+  /* Punk Card Styles */
+  .punk-card {
+    @apply border-4 border-foreground bg-card relative overflow-hidden;
+    box-shadow: 8px 8px 0px hsl(var(--foreground));
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  .glass-nav {
-    @apply bg-glass-medium backdrop-blur-lg border-b border-white/10 dark:bg-glass-dark/80 dark:border-white/5;
+  .punk-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px hsl(var(--primary));
   }
 
-  .bauhaus-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .bauhaus-border {
-    @apply border-2 border-bauhaus-black;
-  }
-
-  .bauhaus-circle {
-    @apply rounded-full bg-bauhaus-blue text-white flex items-center justify-center;
-  }
-
-  .bauhaus-square {
-    @apply rounded-none bg-bauhaus-red text-white flex items-center justify-center;
-  }
-
-  .bauhaus-triangle {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .bauhaus-triangle::before {
+  .punk-card::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 50px 50px 0 0;
-    border-color: theme("colors.bauhaus.yellow") transparent transparent
-      transparent;
-    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 48%, hsl(var(--primary)) 49%, hsl(var(--primary)) 51%, transparent 52%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .punk-card:hover::before {
+    opacity: 0.1;
+  }
+
+  /* Glitch Effect */
+  .glitch {
+    position: relative;
+    animation: glitch-skew 3s infinite linear alternate-reverse;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    animation: glitch-1 2.5s infinite linear alternate-reverse;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-2px, -2px);
+    opacity: 0.8;
+  }
+
+  .glitch::after {
+    animation: glitch-2 2s infinite linear alternate-reverse;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    transform: translate(2px, 2px);
+    opacity: 0.8;
+  }
+
+  /* Neon Glow Effect */
+  .neon-glow {
+    text-shadow: 
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      0 0 20px hsl(var(--primary)),
+      0 0 40px hsl(var(--primary));
+    animation: neon-flicker 3s infinite alternate;
+  }
+
+  .neon-border {
+    border: 3px solid hsl(var(--primary));
+    box-shadow: 
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      inset 0 0 5px hsl(var(--primary)),
+      inset 0 0 10px hsl(var(--primary));
+    animation: neon-pulse 2s infinite alternate;
+  }
+
+  /* Punk Button */
+  .punk-button {
+    @apply border-4 border-foreground bg-primary text-primary-foreground font-bold uppercase tracking-wider;
+    box-shadow: 4px 4px 0px hsl(var(--foreground));
+    transition: all 0.2s;
+    clip-path: polygon(0 0, 95% 0, 100% 20%, 100% 100%, 5% 100%, 0 80%);
+  }
+
+  .punk-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px hsl(var(--accent));
+  }
+
+  .punk-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px hsl(var(--foreground));
+  }
+
+  /* Striped Background */
+  .punk-stripes {
+    background: repeating-linear-gradient(
+      45deg,
+      hsl(var(--background)),
+      hsl(var(--background)) 10px,
+      hsl(var(--muted)) 10px,
+      hsl(var(--muted)) 20px
+    );
+  }
+
+  /* Dotted Pattern */
+  .punk-dots {
+    background-image: radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* ===== GRUNGE THEME STYLES (Dark Mode) ===== */
+  
+  /* Grunge Card - Elegant and Romantic */
+  .dark .punk-card {
+    @apply border-2 border-border bg-card relative overflow-hidden;
+    box-shadow: 
+      0 4px 6px rgba(0, 0, 0, 0.3),
+      0 1px 3px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark .punk-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 10px 20px rgba(0, 0, 0, 0.4),
+      0 6px 6px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .punk-card::before {
+    background: linear-gradient(135deg, hsl(var(--grunge-burgundy)) 0%, transparent 50%);
+    opacity: 0.08;
+  }
+  
+  /* Grunge Textures */
+  .dark .punk-dots {
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(var(--grunge-burgundy)) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--grunge-purple)) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .dark .punk-stripes {
+    background: 
+      linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%),
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.02) 10px,
+        rgba(255, 255, 255, 0.02) 20px
+      );
+  }
+  
+  /* Grunge Paper Texture */
+  .grunge-paper {
+    position: relative;
+    background: hsl(var(--card));
+  }
+  
+  .grunge-paper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+  
+  /* Grunge Floral Pattern */
+  .grunge-floral {
+    background-image: 
+      radial-gradient(circle at 10% 20%, hsl(var(--grunge-mauve)) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, hsl(var(--grunge-sage)) 0%, transparent 20%),
+      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M40 40c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zm-20 0c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zM20 20c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zm20 0c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zm20 0c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zM0 40c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zm60 0c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zM0 60c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zm20 0c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zm20 0c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zm20 0c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2zm20 0c0-1.1.9-2 2-2 1.1 0 2 .9 2 2 0 1.1-.9 2-2 2-1.1 0-2-.9-2-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  /* Grunge Vintage Overlay */
+  .grunge-vintage {
+    position: relative;
+  }
+  
+  .grunge-vintage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+  
+  /* Grunge Glow Effect - Softer than Neon */
+  .dark .neon-glow {
+    text-shadow: 
+      0 0 10px hsl(var(--grunge-burgundy)),
+      0 0 20px hsl(var(--grunge-burgundy)),
+      0 0 30px hsl(var(--grunge-burgundy)),
+      0 2px 4px rgba(0, 0, 0, 0.5);
+    animation: grunge-glow 4s ease-in-out infinite;
+  }
+  
+  .dark .neon-border {
+    border: 2px solid hsl(var(--grunge-burgundy));
+    box-shadow: 
+      0 0 10px hsl(var(--grunge-burgundy)),
+      inset 0 0 10px hsl(var(--grunge-burgundy)),
+      0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Grunge Lace Border */
+  .grunge-lace {
+    border: 2px solid hsl(var(--border));
+    position: relative;
+  }
+  
+  .grunge-lace::before,
+  .grunge-lace::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-image: repeating-linear-gradient(
+      90deg,
+      hsl(var(--grunge-gold)) 0px,
+      hsl(var(--grunge-gold)) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+  }
+  
+  .grunge-lace::before {
+    top: -2px;
+  }
+  
+  .grunge-lace::after {
+    bottom: -2px;
   }
 }
+
+/* Punk Animations */
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  10% { transform: skew(-2deg); }
+  20% { transform: skew(2deg); }
+  30% { transform: skew(0deg); }
+  40% { transform: skew(1deg); }
+  50% { transform: skew(-1deg); }
+  60% { transform: skew(0deg); }
+  70% { transform: skew(-0.5deg); }
+  80% { transform: skew(0.5deg); }
+  90% { transform: skew(0deg); }
+  100% { transform: skew(0deg); }
+}
+
+@keyframes glitch-1 {
+  0%, 100% { 
+    transform: translate(0);
+    color: hsl(var(--primary));
+  }
+  33% { 
+    transform: translate(-5px, 3px);
+    color: hsl(var(--secondary));
+  }
+  66% { 
+    transform: translate(5px, -3px);
+    color: hsl(var(--accent));
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { 
+    transform: translate(0);
+    color: hsl(var(--secondary));
+  }
+  33% { 
+    transform: translate(5px, -3px);
+    color: hsl(var(--accent));
+  }
+  66% { 
+    transform: translate(-5px, 3px);
+    color: hsl(var(--primary));
+  }
+}
+
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      0 0 20px hsl(var(--primary)),
+      0 0 40px hsl(var(--primary)),
+      0 0 80px hsl(var(--primary));
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      0 0 20px hsl(var(--primary)),
+      inset 0 0 5px hsl(var(--primary)),
+      inset 0 0 10px hsl(var(--primary));
+  }
+  50% {
+    box-shadow: 
+      0 0 10px hsl(var(--primary)),
+      0 0 20px hsl(var(--primary)),
+      0 0 40px hsl(var(--primary)),
+      inset 0 0 10px hsl(var(--primary)),
+      inset 0 0 20px hsl(var(--primary));
+  }
+}
+
+@keyframes punk-bounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(-2deg); }
+  50% { transform: translateY(0) rotate(2deg); }
+  75% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+@keyframes punk-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+  20%, 40%, 60%, 80% { transform: translateX(3px); }
+}
+
+@keyframes punk-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes punk-color-shift {
+  0%, 100% { filter: hue-rotate(0deg); }
+  25% { filter: hue-rotate(90deg); }
+  50% { filter: hue-rotate(180deg); }
+  75% { filter: hue-rotate(270deg); }
+}
+
+@keyframes punk-slide-in {
+  from {
+    transform: translateX(-100%) rotate(-5deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Utility Animation Classes */
+.animate-punk-bounce { animation: punk-bounce 2s ease-in-out infinite; }
+.animate-punk-shake { animation: punk-shake 0.5s ease-in-out; }
+.animate-punk-spin { animation: punk-spin 3s linear infinite; }
+.animate-punk-color-shift { animation: punk-color-shift 5s ease-in-out infinite; }
+.animate-punk-slide-in { animation: punk-slide-in 0.6s ease-out forwards; }
+
+/* Grunge Animations - Elegant and Subtle */
+@keyframes grunge-glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px hsl(var(--grunge-burgundy)),
+      0 0 20px hsl(var(--grunge-burgundy)),
+      0 0 30px hsl(var(--grunge-burgundy)),
+      0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 
+      0 0 15px hsl(var(--grunge-burgundy)),
+      0 0 30px hsl(var(--grunge-burgundy)),
+      0 0 45px hsl(var(--grunge-burgundy)),
+      0 2px 6px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes grunge-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes grunge-sway {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+@keyframes grunge-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes grunge-shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes grunge-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes grunge-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+}
+
+/* Grunge Animation Utility Classes */
+.dark .animate-punk-bounce { animation: grunge-float 4s ease-in-out infinite; }
+.dark .animate-punk-spin { animation: grunge-sway 6s ease-in-out infinite; }
+.dark .animate-punk-color-shift { animation: grunge-breathe 8s ease-in-out infinite; }
+.dark .animate-punk-slide-in { animation: grunge-fade-in 0.8s ease-out forwards; }

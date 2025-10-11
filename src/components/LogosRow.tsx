@@ -60,24 +60,43 @@ const LogosRow = ({
     }
   };
 
+  const colors = ["primary", "secondary", "accent", "punk-cyan"];
+
   return (
-    <div className="w-full mt-8 py-4">
+    <div className="w-full mt-8 py-6">
+      <p className="text-sm font-display font-bold uppercase text-foreground mb-4 tracking-wider">
+        Trusted By
+      </p>
       <motion.div
-        className="flex flex-wrap justify-start items-center gap-8 md:gap-12"
+        className="flex flex-wrap justify-start items-center gap-6 md:gap-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
         {companies.map((company, index) => (
-          <motion.div key={index} variants={itemVariants}>
+          <motion.div 
+            key={index} 
+            variants={itemVariants}
+            whileHover={{ 
+              scale: 1.1, 
+              rotate: [0, -5, 5, 0],
+              transition: { duration: 0.3 }
+            }}
+          >
             <div
-              className={`w-12 h-12 md:w-16 md:h-16 ${getBackgroundColor(company.name)} rounded-full flex items-center justify-center p-2 border border-primary/10 dark:border-accent/10`}
+              className={`w-16 h-16 md:w-20 md:h-20 ${getBackgroundColor(company.name)} flex items-center justify-center p-3 border-4 border-foreground relative group overflow-hidden`}
+              style={{ 
+                clipPath: 'polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%)',
+                boxShadow: '4px 4px 0px hsl(var(--foreground))'
+              }}
             >
+              {/* Animated background on hover */}
+              <div className={`absolute inset-0 bg-${colors[index % colors.length]} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
               <img
                 src={company.logo}
                 alt={`${company.name} logo`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain relative z-10 filter group-hover:brightness-125 transition-all duration-300"
                 onError={(e) => {
                   console.error(`Failed to load logo for ${company.name}`);
                 }}

@@ -423,9 +423,16 @@
                 updateLightbox();
                 lightbox.classList.add('active');
                 // Hide the main popup close button when lightbox is open
-                const mainCloseButton = parent.document.getElementById('modalClose');
-                if (mainCloseButton) {
-                    mainCloseButton.style.display = 'none';
+                try {
+                    const mainCloseButton = window.parent.document.getElementById('modalClose');
+                    if (mainCloseButton) {
+                        mainCloseButton.style.display = 'none';
+                        console.log('Main close button hidden');
+                    } else {
+                        console.log('Main close button not found');
+                    }
+                } catch (e) {
+                    console.log('Cannot access parent document:', e);
                 }
                 // Don't affect the main page overflow - keep the popup open
             }
@@ -433,9 +440,16 @@
             function closeLightbox() {
                 lightbox.classList.remove('active');
                 // Show the main popup close button when lightbox closes
-                const mainCloseButton = parent.document.getElementById('modalClose');
-                if (mainCloseButton) {
-                    mainCloseButton.style.display = 'flex';
+                try {
+                    const mainCloseButton = window.parent.document.getElementById('modalClose');
+                    if (mainCloseButton) {
+                        mainCloseButton.style.display = 'flex';
+                        console.log('Main close button shown');
+                    } else {
+                        console.log('Main close button not found');
+                    }
+                } catch (e) {
+                    console.log('Cannot access parent document:', e);
                 }
                 // Don't restore main page overflow - popup remains open
             }

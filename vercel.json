@@ -1,13 +1,29 @@
 {
   "version": 2,
-  "buildCommand": "git lfs pull",
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "."
-      }
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "styles.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "script.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "password-protection.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "popups/**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "popups/**/*.{jpg,jpeg,png,gif,webp,mp3,pdf}",
+      "use": "@vercel/static"
     }
   ],
   "routes": [

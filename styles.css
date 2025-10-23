@@ -1,0 +1,954 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    margin-bottom: 16px;
+}
+
+.logo {
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: #000000;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.description {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #000000;
+    margin-bottom: 64px;
+}
+
+/* Roles grid */
+.roles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px 40px;
+    margin: 40px 0;
+}
+
+.role {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    text-transform: lowercase;
+    letter-spacing: 0.01em;
+}
+
+/* Founders */
+.founders {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #666666;
+    margin-top: 40px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 20px;
+    }
+    
+    .header {
+        margin-bottom: 12px;
+    }
+    
+    .logo {
+        font-size: 36px;
+    }
+    
+    .description {
+        font-size: 20px;
+        margin-bottom: 48px;
+    }
+    
+    .roles {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 30px 0;
+    }
+    
+    .role {
+        font-size: 16px;
+    }
+    
+    .founders {
+        font-size: 16px;
+        margin-top: 30px;
+    }
+    
+    .main-content {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 16px;
+    }
+    
+    .header {
+        margin-bottom: 10px;
+    }
+    
+    .logo {
+        font-size: 32px;
+    }
+    
+    .description {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+    
+    .role {
+        font-size: 15px;
+    }
+    
+    .founders {
+        font-size: 15px;
+    }
+}
+
+/* Hover effects for interactive elements */
+.role {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.role:hover {
+    color: #333333;
+    transform: translateY(-2px);
+}
+
+.role:focus {
+    outline: 2px solid #000;
+    outline-offset: 4px;
+    color: #333333;
+    transform: translateY(-2px);
+}
+
+.role:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.role:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 4px;
+    color: #333333;
+    transform: translateY(-2px);
+}
+
+/* Unique hover animations for each popup */
+
+/* Critical Mass - Pulsing glow (design systems, current work) */
+#critical-mass {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+#critical-mass:hover {
+    color: #1a1a1a;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Airbnb - Warm inclusive shift (accessibility, community) */
+#airbnb {
+    transition: all 0.4s ease;
+}
+#airbnb:hover {
+    color: #FF5A5F;
+    transform: translateY(-2px) translateX(2px);
+}
+
+/* Gap Inc - Retail brand fade (design system, fashion retail) */
+#gap-inc {
+    transition: all 0.4s ease;
+}
+#gap-inc:hover {
+    color: #003087;
+    letter-spacing: 0.03em;
+    transform: translateY(-2px);
+}
+
+/* GoPro - Bold energetic (action sports, energy) */
+#gopro {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#gopro:hover {
+    color: #00A8E1;
+    transform: translateY(-3px) scale(1.03);
+    font-weight: 500;
+}
+
+/* Nagra OpenTV - Scan line tech effect (TV, remote control) */
+#nagra-opentv {
+    transition: all 0.4s ease;
+    background: linear-gradient(to right, transparent 0%, rgba(100, 100, 255, 0) 50%, transparent 100%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+}
+#nagra-opentv:hover {
+    color: #6464FF;
+    background-position: 0% 0;
+    transform: translateY(-2px);
+}
+
+/* Invasivecode - Smooth swipe (mobile, iOS) */
+#invasivecode {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+#invasivecode:hover {
+    color: #007AFF;
+    transform: translateY(-2px) translateX(4px);
+    letter-spacing: 0.02em;
+}
+
+/* State Creative - Creative gradient burst (agency, art direction) */
+#state-creative {
+    transition: all 0.4s ease;
+}
+#state-creative:hover {
+    background: linear-gradient(90deg, #000 0%, #666 50%, #000 100%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientSlide 1s ease-in-out;
+    transform: translateY(-2px) scale(1.01);
+}
+
+@keyframes gradientSlide {
+    0% { background-position: 0% 0; }
+    100% { background-position: 100% 0; }
+}
+
+/* Agent of Presence - Illuminating glow (wearable tech, LED fashion) */
+#agent-of-presence {
+    transition: all 0.5s ease;
+}
+#agent-of-presence:hover {
+    color: #9D4EDD;
+    text-shadow: 0 0 15px rgba(157, 78, 221, 0.3), 0 0 30px rgba(157, 78, 221, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Luxyuu - Elegant luxury fade (fashion e-commerce) */
+#luxyuu {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+#luxyuu:hover {
+    color: #8B7355;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    transform: translateY(-2px);
+}
+
+/* INOA - Water ripple effect (underwater optics, marine) */
+#inoa {
+    transition: all 0.4s ease;
+}
+#inoa:hover {
+    color: #0077BE;
+    transform: translateY(-2px);
+    animation: waterRipple 0.6s ease-out;
+}
+
+@keyframes waterRipple {
+    0%, 100% { transform: translateY(-2px) scale(1); }
+    50% { transform: translateY(-2px) scale(1.02); }
+}
+
+/* iGoatse - Pop/viral effect (viral product, entrepreneurship) */
+#igoatse {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#igoatse:hover {
+    color: #FF6B35;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* ISIA Firenze - Classic underline (education, Italian design school) */
+#isia-firenze {
+    transition: all 0.4s ease;
+}
+#isia-firenze::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #8B0000;
+    transition: width 0.4s ease;
+}
+#isia-firenze:hover {
+    color: #8B0000;
+    transform: translateY(-2px);
+}
+#isia-firenze:hover::after {
+    width: 100%;
+}
+
+/* ID & IxD - Precision mechanical shift (industrial design, CAD) */
+#id-ixd {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#id-ixd:hover {
+    color: #2C3E50;
+    letter-spacing: 0.08em;
+    transform: translateY(-2px) translateX(1px);
+    font-weight: 500;
+}
+
+/* Art Direction - Color spectrum gradient (visual creativity) */
+#art-direction {
+    transition: all 0.5s ease;
+}
+#art-direction:hover {
+    background: linear-gradient(90deg, #FF6B6B 0%, #4ECDC4 25%, #45B7D1 50%, #FFA07A 75%, #FF6B6B 100%);
+    background-size: 300% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorSpectrum 1.2s ease-in-out;
+    transform: translateY(-2px);
+}
+
+@keyframes colorSpectrum {
+    0% { background-position: 0% 0; }
+    100% { background-position: 100% 0; }
+}
+
+/* Talks - Spotlight effect (presentations, public speaking) */
+#talks {
+    transition: all 0.4s ease;
+}
+#talks:hover {
+    color: #F39C12;
+    text-shadow: 0 2px 8px rgba(243, 156, 18, 0.2);
+    transform: translateY(-2px) scale(1.01);
+}
+
+/* Awards - Shimmer shine (recognition, achievement) */
+#awards {
+    transition: all 0.4s ease;
+}
+#awards:hover {
+    background: linear-gradient(90deg, #000 0%, #FFD700 50%, #000 100%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: awardShimmer 1s ease-in-out;
+    transform: translateY(-2px);
+}
+
+@keyframes awardShimmer {
+    0% { background-position: 0% 0; }
+    50% { background-position: 100% 0; opacity: 0.9; }
+    100% { background-position: 200% 0; opacity: 1; }
+}
+
+/* Patents - Blueprint technical (innovation, intellectual property) */
+#patents {
+    transition: all 0.4s ease;
+}
+#patents::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(41, 128, 185, 0.05) 50%, transparent 100%);
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+#patents:hover {
+    color: #2980B9;
+    transform: translateY(-2px);
+}
+#patents:hover::before {
+    width: 100%;
+}
+
+/* Articles - Typewriter text effect (writing, publications) */
+#articles {
+    transition: all 0.4s ease;
+}
+#articles:hover {
+    color: #34495E;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.02em;
+    transform: translateY(-2px);
+}
+
+/* Resume - Professional underline (CV, experience) */
+#resume {
+    transition: all 0.3s ease;
+}
+#resume::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s ease;
+}
+#resume:hover {
+    transform: translateY(-2px);
+}
+#resume:hover::after {
+    width: 100%;
+}
+
+/* Puxa.ai - Futuristic AI pulse (current venture, AI) */
+#puxa-ai {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+#puxa-ai:hover {
+    color: #6366F1;
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+    animation: aiPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes aiPulse {
+    0%, 100% { text-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+    50% { text-shadow: 0 0 30px rgba(99, 102, 241, 0.5); }
+}
+
+/* AI+UX=AX - Mathematical formula shift (methodology, framework) */
+#ai-ux-ax {
+    transition: all 0.4s ease;
+    font-variant-numeric: tabular-nums;
+}
+#ai-ux-ax:hover {
+    color: #10B981;
+    letter-spacing: 0.1em;
+    transform: translateY(-2px) scale(1.02);
+    font-weight: 500;
+}
+
+/* Podcast - Sound wave pulse (audio, conversation) */
+#podcast {
+    transition: all 0.4s ease;
+}
+#podcast:hover {
+    color: #8B5CF6;
+    transform: translateY(-2px);
+    animation: soundWave 0.8s ease-in-out;
+}
+
+@keyframes soundWave {
+    0%, 100% { transform: translateY(-2px) scaleX(1); }
+    25% { transform: translateY(-2px) scaleX(1.02); }
+    75% { transform: translateY(-2px) scaleX(0.98); }
+}
+
+/* GitHub - Monospace code effect (open source, development) */
+#github {
+    transition: all 0.4s ease;
+}
+#github:hover {
+    color: #24292e;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+    letter-spacing: 0.03em;
+    transform: translateY(-2px);
+    border: 1px solid rgba(36, 41, 46, 0.1);
+    padding: 0 4px;
+    border-radius: 3px;
+    background: rgba(36, 41, 46, 0.02);
+}
+
+/* This Website - Living portfolio glow (innovation, methodology) */
+#this-website {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+#this-website:hover {
+    color: #6366F1;
+    text-shadow: 
+        0 0 10px rgba(99, 102, 241, 0.5),
+        0 0 20px rgba(99, 102, 241, 0.3),
+        0 0 30px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px) scale(1.05);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: -4px -8px;
+}
+#this-website:hover::before {
+    content: '🌱';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: grow 1s ease-in-out infinite;
+}
+@keyframes grow {
+    0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
+    50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+}
+@keyframes sparkle {
+    0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
+    50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+}
+
+/* Link-specific styling for footer */
+.founders .role {
+    display: inline;
+    text-decoration: none;
+}
+
+.founders .role:hover {
+    color: #333333 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(8px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    width: 90vw;
+    height: 90vh;
+    max-width: 1400px;
+    max-height: 900px;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.7) translateY(40px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background-color: #f8f8f8;
+    color: #000;
+    transform: scale(1.1);
+}
+
+.modal-close:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+    background-color: #f8f8f8;
+    color: #000;
+}
+
+.modal-close:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.modal-close:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+    background-color: #f8f8f8;
+    color: #000;
+}
+
+.modal-body {
+    padding: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* Badge System */
+.badges {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s ease;
+}
+
+.badge.time-current {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.badge.time-recent {
+    background-color: #666;
+    color: #fff;
+    border-color: #666;
+}
+
+.badge.time-past {
+    background-color: #f0f0f0;
+    color: #666;
+    border-color: #d0d0d0;
+}
+
+.badge.focus-ux {
+    background-color: #f5f5f5;
+    color: #000;
+    border-color: #000;
+}
+
+.badge.focus-prototyping {
+    background-color: #f0f0f0;
+    color: #333;
+    border-color: #333;
+}
+
+.badge.focus-strategy {
+    background-color: #e8e8e8;
+    color: #000;
+    border-color: #000;
+}
+
+.badge.focus-product {
+    background-color: #f8f8f8;
+    color: #333;
+    border-color: #333;
+}
+
+.badge.focus-management {
+    background-color: #f2f2f2;
+    color: #000;
+    border-color: #000;
+}
+
+.badge.result-roi {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.badge.result-adoption {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+.badge.result-collaboration {
+    background-color: #666;
+    color: #fff;
+    border-color: #666;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-body h2 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 32px;
+    color: #000;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.modal-body p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 24px;
+    font-weight: 300;
+}
+
+.modal-body ul {
+    margin: 32px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.modal-body li {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+    font-weight: 300;
+}
+
+.modal-body li::before {
+    content: "•";
+    color: #000;
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Mobile-friendly hover adjustments */
+@media (hover: none) and (pointer: coarse) {
+    /* Simplify animations for touch devices */
+    .role:hover {
+        transform: none;
+    }
+    
+    .role:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    /* Disable complex animations on touch */
+    #puxa-ai:hover,
+    #agent-of-presence:hover {
+        animation: none;
+    }
+    
+    /* Simplify effects that rely on precise hover */
+    #github:hover {
+        border: none;
+        padding: 0;
+        background: transparent;
+    }
+    
+    #articles:hover,
+    #ai-ux-ax:hover {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95vw;
+        height: 92vh;
+        border-radius: 12px;
+    }
+    
+    .modal-body {
+        padding: 0;
+    }
+    
+    .badges {
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+    
+    .badge {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    
+    .modal-body h2 {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+    
+    .modal-body p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .modal-body li {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .modal-close {
+        top: 20px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 98vw;
+        height: 96vh;
+        border-radius: 8px;
+    }
+    
+    .modal-body {
+        padding: 0;
+    }
+    
+    .badges {
+        gap: 6px;
+        margin-bottom: 20px;
+    }
+    
+    .badge {
+        padding: 3px 6px;
+        font-size: 9px;
+    }
+    
+    .modal-body h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .modal-body p {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+    
+    .modal-body li {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+}
+
+/* Password Protection Modal */
+.password-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(10px);
+}
+
+.password-modal-content {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e0e0e0;
+}
+
+.password-modal-content input:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+    border-color: #000;
+}
+
+.password-modal-content button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.password-modal-content button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    .password-modal-content {
+        padding: 30px 20px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+}
+

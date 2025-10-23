@@ -657,7 +657,7 @@
                 updateLightbox();
                 lightbox.classList.add('active');
                 // Hide the main popup close button when lightbox is open
-                const mainCloseButton = document.querySelector('.modal-close');
+                const mainCloseButton = parent.document.getElementById('modalClose');
                 if (mainCloseButton) {
                     mainCloseButton.style.display = 'none';
                 }
@@ -667,7 +667,7 @@
             function closeLightbox() {
                 lightbox.classList.remove('active');
                 // Show the main popup close button when lightbox closes
-                const mainCloseButton = document.querySelector('.modal-close');
+                const mainCloseButton = parent.document.getElementById('modalClose');
                 if (mainCloseButton) {
                     mainCloseButton.style.display = 'flex';
                 }

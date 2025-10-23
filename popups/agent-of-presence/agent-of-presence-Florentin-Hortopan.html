@@ -285,24 +285,23 @@
         }
 
         .lightbox-close {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
             background: rgba(255, 255, 255, 0.3);
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             color: white;
-            font-size: 32px;
+            font-size: 30px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            z-index: 999999;
-            pointer-events: auto;
+            z-index: 100000;
         }
 
         .lightbox-close:hover {
@@ -657,33 +656,24 @@
                 currentIndex = index;
                 updateLightbox();
                 lightbox.classList.add('active');
-                // Prevent clicks on the main modal when lightbox is open
-                document.addEventListener('click', preventModalClicks, true);
+                // Hide the main popup close button when lightbox is open
+                const mainCloseButton = document.querySelector('.modal-close');
+                if (mainCloseButton) {
+                    mainCloseButton.style.display = 'none';
+                }
                 // Don't affect the main page overflow - keep the popup open
             }
 
             function closeLightbox() {
                 lightbox.classList.remove('active');
-                // Remove the click prevention when lightbox closes
-                document.removeEventListener('click', preventModalClicks, true);
+                // Show the main popup close button when lightbox closes
+                const mainCloseButton = document.querySelector('.modal-close');
+                if (mainCloseButton) {
+                    mainCloseButton.style.display = 'flex';
+                }
                 // Don't restore main page overflow - popup remains open
             }
 
-            function preventModalClicks(e) {
-                // If lightbox is active and click is not on lightbox elements, prevent it
-                if (lightbox.classList.contains('active')) {
-                    const isLightboxElement = lightbox.contains(e.target) || e.target === lightbox;
-                    const isLightboxClose = e.target.classList.contains('lightbox-close');
-                    const isLightboxNav = e.target.classList.contains('lightbox-nav');
-                    const isLightboxContent = e.target.classList.contains('lightbox-content');
-                    
-                    // Allow clicks on lightbox elements, block everything else
-                    if (!isLightboxElement && !isLightboxClose && !isLightboxNav && !isLightboxContent) {
-                        e.stopPropagation();
-                        e.preventDefault();
-                    }
-                }
-            }
 
             function updateLightbox() {
                 const img = galleryImages[currentIndex];

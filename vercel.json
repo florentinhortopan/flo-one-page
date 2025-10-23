@@ -18,103 +18,15 @@
       "use": "@vercel/static"
     },
     {
-      "src": "popups/ai-ux-ax/ai-ux-ax-Florentin-Hortopan.html",
+      "src": "popups/**/*.html",
       "use": "@vercel/static"
     },
     {
-      "src": "popups/agent-of-presence/agent-of-presence-Florentin-Hortopan.html",
+      "src": "popups/**/*.{mp4,mov,m4v,mp3,jpg,jpeg,png,gif,webp}",
       "use": "@vercel/static"
     },
     {
-      "src": "popups/airbnb/airbnb-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/art-direction/art-direction-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/articles/articles-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/awards/awards-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/critical-mass/critical-mass-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/gap-inc/gap-inc-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/github/github-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/gopro/gopro-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/id-ixd/id-ixd-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/igoatse/igoatse-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/invasivecode/invasivecode-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/inoa/inoa-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/isia-firenze/isia-firenze-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/luxyuu/luxyuu-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/nagra-opentv/nagra-opentv-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/patents/patents-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/podcast/podcast-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/publications/publications-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/puxa-ai/puxa-ai-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/resume/resume-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/state-creative/state-creative-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/talks/talks-Florentin-Hortopan.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "popups/this-website/this-website-Florentin-Hortopan.html",
+      "src": "popups/**/*.pdf",
       "use": "@vercel/static"
     }
   ],
@@ -132,104 +44,8 @@
       "dest": "/password-protection.js"
     },
     {
-      "src": "/popups/ai-ux-ax/ai-ux-ax-Florentin-Hortopan.html",
-      "dest": "/popups/ai-ux-ax/ai-ux-ax-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/agent-of-presence/agent-of-presence-Florentin-Hortopan.html",
-      "dest": "/popups/agent-of-presence/agent-of-presence-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/airbnb/airbnb-Florentin-Hortopan.html",
-      "dest": "/popups/airbnb/airbnb-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/art-direction/art-direction-Florentin-Hortopan.html",
-      "dest": "/popups/art-direction/art-direction-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/articles/articles-Florentin-Hortopan.html",
-      "dest": "/popups/articles/articles-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/awards/awards-Florentin-Hortopan.html",
-      "dest": "/popups/awards/awards-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/critical-mass/critical-mass-Florentin-Hortopan.html",
-      "dest": "/popups/critical-mass/critical-mass-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/gap-inc/gap-inc-Florentin-Hortopan.html",
-      "dest": "/popups/gap-inc/gap-inc-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/github/github-Florentin-Hortopan.html",
-      "dest": "/popups/github/github-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/gopro/gopro-Florentin-Hortopan.html",
-      "dest": "/popups/gopro/gopro-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/id-ixd/id-ixd-Florentin-Hortopan.html",
-      "dest": "/popups/id-ixd/id-ixd-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/igoatse/igoatse-Florentin-Hortopan.html",
-      "dest": "/popups/igoatse/igoatse-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/invasivecode/invasivecode-Florentin-Hortopan.html",
-      "dest": "/popups/invasivecode/invasivecode-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/inoa/inoa-Florentin-Hortopan.html",
-      "dest": "/popups/inoa/inoa-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/isia-firenze/isia-firenze-Florentin-Hortopan.html",
-      "dest": "/popups/isia-firenze/isia-firenze-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/luxyuu/luxyuu-Florentin-Hortopan.html",
-      "dest": "/popups/luxyuu/luxyuu-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/nagra-opentv/nagra-opentv-Florentin-Hortopan.html",
-      "dest": "/popups/nagra-opentv/nagra-opentv-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/patents/patents-Florentin-Hortopan.html",
-      "dest": "/popups/patents/patents-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/podcast/podcast-Florentin-Hortopan.html",
-      "dest": "/popups/podcast/podcast-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/publications/publications-Florentin-Hortopan.html",
-      "dest": "/popups/publications/publications-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/puxa-ai/puxa-ai-Florentin-Hortopan.html",
-      "dest": "/popups/puxa-ai/puxa-ai-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/resume/resume-Florentin-Hortopan.html",
-      "dest": "/popups/resume/resume-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/state-creative/state-creative-Florentin-Hortopan.html",
-      "dest": "/popups/state-creative/state-creative-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/talks/talks-Florentin-Hortopan.html",
-      "dest": "/popups/talks/talks-Florentin-Hortopan.html"
-    },
-    {
-      "src": "/popups/this-website/this-website-Florentin-Hortopan.html",
-      "dest": "/popups/this-website/this-website-Florentin-Hortopan.html"
+      "src": "/popups/(.*)",
+      "dest": "/popups/$1"
     },
     {
       "src": "/(.*)",

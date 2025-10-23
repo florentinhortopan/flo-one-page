@@ -44,8 +44,8 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Florentin Hortopan",
+        "@type": "Person",
+        "name": "Florentin Hortopan",
       "url": "https://florentin.us",
       "jobTitle": "Creative Founder & Chief Design Officer",
       "description": "Creative technologist and design leader with 15+ years experience at Fortune 500 companies and startups. Expertise in UX/UI design, product strategy, AI-augmented experiences, and team leadership.",
@@ -89,6 +89,33 @@
             color: #000;
             box-sizing: border-box;
             line-height: 1.6;
+        }
+        
+        .accessibility-button {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid #6366F1;
+            border-radius: 4px;
+            line-height: 1;
+            background-color: #6366F1;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 16px;
+        }
+        
+        .accessibility-button:hover {
+            background-color: #4F46E5;
+            transform: translateY(-1px);
+        }
+        
+        .accessibility-button.active {
+            background-color: #10B981;
+            border-color: #10B981;
         }
         
         .badges {
@@ -495,58 +522,19 @@
             background: #e9ecef;
         }
 
-        /* Accessibility Tab */
-        .accessibility-tab {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: #6366F1;
-            color: white;
-            border: none;
-            padding: 12px 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .accessibility-tab:hover {
-            background: #4F46E5;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
-        }
-
-        .accessibility-tab:focus {
-            outline: 2px solid #fff;
-            outline-offset: 2px;
-        }
-
-        .accessibility-tab.active {
-            background: #10B981;
-        }
-
-        .accessibility-tab.active:hover {
-            background: #059669;
-        }
 
         /* Accessibility Panel */
         .accessibility-panel {
             position: fixed;
             top: 80px;
-            right: 20px;
+            left: 20px;
             width: 320px;
             background: white;
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
             padding: 24px;
             z-index: 999;
-            transform: translateX(100%);
+            transform: translateX(-100%);
             transition: transform 0.3s ease;
             border: 1px solid #e5e7eb;
         }
@@ -570,7 +558,7 @@
 
         .accessibility-control label {
             display: block;
-            font-size: 14px;
+                font-size: 14px;
             font-weight: 500;
             color: #374151;
             margin-bottom: 8px;
@@ -590,7 +578,7 @@
             cursor: pointer;
             transition: all 0.2s ease;
             margin-right: 8px;
-            margin-bottom: 8px;
+                margin-bottom: 8px;
         }
 
         .accessibility-control button:hover {
@@ -710,16 +698,8 @@
 
         /* Mobile accessibility adjustments */
         @media (max-width: 768px) {
-            .accessibility-tab {
-                top: 10px;
-                right: 10px;
-                padding: 10px 12px;
-                font-size: 12px;
-            }
-
             .accessibility-panel {
                 top: 60px;
-                right: 10px;
                 left: 10px;
                 width: auto;
             }
@@ -727,10 +707,6 @@
     </style>
 </head>
 <body>
-    <!-- Accessibility Tab -->
-    <button class="accessibility-tab" id="accessibilityTab" onclick="toggleAccessibilityPanel()" aria-label="Open accessibility options">
-        ♿ Accessibility
-    </button>
 
     <!-- Accessibility Panel -->
     <div class="accessibility-panel" id="accessibilityPanel">
@@ -791,7 +767,11 @@
         </div>
     </div>
 
-    <div class="badges">
+<button class="accessibility-button" id="accessibilityButton" onclick="toggleAccessibilityPanel()" aria-label="Toggle accessibility options">
+    ♿ Accessibility
+</button>
+
+<div class="badges">
         <span class="badge time-current">Current</span>
         <span class="badge focus-management">Management</span>
         <span class="badge result-roi">Business ROI</span>
@@ -814,7 +794,7 @@
 
     <div class="experience-item">
         <div class="company-title">Critical Mass</div>
-        <div class="role-title">Creative Founder & Chief Design Officer</div>
+        <div class="role-title">Associate Director of User Experience</div>
         <div class="duration">Aug 2021 - Present</div>
         <div class="location">San Francisco, CA</div>
         <p>Leading digital transformation and creative strategy for Fortune 500 clients. Delivering award-winning experiences that drive business results through innovative design and AI-augmented workflows.</p>
@@ -943,11 +923,11 @@
     <div class="skills-grid">
         <div class="skill-category">
             <h4>Design & UX</h4>
-            <ul>
-                <li>Product Design & User Experience</li>
-                <li>Design Systems & Component Libraries</li>
-                <li>AI/ML Product Design</li>
-                <li>Brand Strategy & Creative Direction</li>
+<ul>
+    <li>Product Design & User Experience</li>
+    <li>Design Systems & Component Libraries</li>
+    <li>AI/ML Product Design</li>
+    <li>Brand Strategy & Creative Direction</li>
                 <li>Accessibility (WCAG AAA)</li>
             </ul>
         </div>
@@ -964,8 +944,8 @@
         <div class="skill-category">
             <h4>Leadership</h4>
             <ul>
-                <li>Team Leadership & Mentorship</li>
-                <li>Cross-Functional Collaboration</li>
+    <li>Team Leadership & Mentorship</li>
+    <li>Cross-Functional Collaboration</li>
                 <li>Strategic Planning</li>
                 <li>Client Relations & Presentations</li>
                 <li>Process Innovation</li>
@@ -1016,7 +996,7 @@
         <li><strong>Romanian</strong> - Native</li>
         <li><strong>English</strong> - TOEFL iBT® certified</li>
         <li><strong>German</strong> - Basic</li>
-    </ul>
+</ul>
 
     <h2>Interests</h2>
     <p>3D printing/CNC/welding, photography, tennis & running, music (violin, piano, guitar), composition for presentations.</p>
@@ -1087,13 +1067,13 @@
         // Accessibility functionality
         function toggleAccessibilityPanel() {
             const panel = document.getElementById('accessibilityPanel');
-            const tab = document.getElementById('accessibilityTab');
+            const button = document.getElementById('accessibilityButton');
             
             panel.classList.toggle('active');
-            tab.classList.toggle('active');
+            button.classList.toggle('active');
             
             // Update aria-expanded for screen readers
-            tab.setAttribute('aria-expanded', panel.classList.contains('active'));
+            button.setAttribute('aria-expanded', panel.classList.contains('active'));
         }
 
         function adjustFontSize(value) {

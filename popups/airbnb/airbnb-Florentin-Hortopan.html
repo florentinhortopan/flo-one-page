@@ -48,6 +48,12 @@
             box-sizing: border-box;
         }
 
+        /* Ensure no extra spacing on hero image */
+        .hero-image, .hero-image * {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #fff;
@@ -143,12 +149,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0;
+            padding: 0;
         }
 
         .hero-image img {
             width: 100%;
             height: auto;
             object-fit: cover;
+            margin: 0;
+            padding: 0;
+            display: block;
         }
 
         /* Content Container */
@@ -490,10 +501,10 @@
             <p class="subtitle">Leading accessibility improvements and component adoption across Airbnb's global platform</p>
             <div class="meta">
                 <div class="meta-item">
-                    <strong>Role:</strong> Senior UX Designer (Contract)
+                    <strong>Role:</strong> Senior UX Architect
                 </div>
                 <div class="meta-item">
-                    <strong>Focus:</strong> DLS Accessibility & Adoption
+                    <strong>Focus:</strong> DLS Accessibility & Adoption, Notifications, Badges, and Alerts.
                 </div>
                 <div class="meta-item">
                     <strong>Organization:</strong> Critical Mass for Airbnb
@@ -565,10 +576,7 @@
             <h3>Design Process & Audit</h3>
             <p>I conducted a thorough audit of existing components and interfaces, documenting accessibility gaps and component usage patterns across different product areas.</p>
 
-            <div class="media-container">
-                <img src="assets/Airbnb-DLS/AirDLS-Flo-Pres-May-2022-jpg-slides/AirDLS-FLO-pres-May-2022.005.jpeg" alt="Design audit showing component annotations and accessibility review">
-                <div class="media-caption">Comprehensive design audit: All parts reviewed and annotated for accessibility improvements</div>
-            </div>
+          
 
             <h3>Alt-text Feature: Iterative Development</h3>
             <p>The alt-text feature went through three major iterations, each addressing different stakeholder needs and technical constraints while maintaining usability and accessibility standards.</p>
@@ -584,11 +592,6 @@
                 </video>
             </div>
             <p class="media-caption">Phase I: Before and after comparison showing the initial alt-text feature implementation</p>
-
-            <div class="media-container">
-                <img src="assets/Airbnb-DLS/AirDLS-Flo-Pres-May-2022-jpg-slides/AirDLS-FLO-pres-May-2022.010.jpeg" alt="Phase 1 implementation showing text area for alt-text">
-            </div>
-            <p class="media-caption">Adding a simple text field with keyboard shortcuts guidance</p>
 
             <h4>Phase II: Enhanced Discoverability</h4>
             <span class="phase-badge">Second Iteration</span>
@@ -614,15 +617,7 @@
             </div>
             <p class="media-caption">Phase III: Polished final design with optimized workflows</p>
 
-            <!-- Audio Walkthrough -->
-            <div class="audio-player">
-                <h4>🎙️ Project Walkthrough</h4>
-                <p style="margin-bottom: 0; font-size: 15px; color: #555;">Listen to a detailed explanation of the DLS accessibility work and decision-making process</p>
-                <audio controls>
-                    <source src="/popups/airbnb/assets/Airbnb-dls-work-rec-audio.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
+          
 
             <h3>Design System Consolidation</h3>
             <p>Beyond the alt-text feature, I worked on consolidating component libraries and improving DLS documentation to support designers and developers.</p>
@@ -645,7 +640,7 @@
         <section class="section">
             <h2>Additional Project Insights</h2>
             <p>Explore the full presentation deck to see detailed annotations, design decisions, and the complete scope of accessibility improvements made to the Airbnb DLS.</p>
-
+            <p>Listen along the audio file while you scroll through the slides.</p>
             <div class="slide-gallery">
                 <div class="slide-container">
                     <img id="currentSlide" src="assets/Airbnb-DLS/AirDLS-Flo-Pres-May-2022-jpg-slides/AirDLS-FLO-pres-May-2022.002.jpeg" alt="Presentation slide">
@@ -655,6 +650,15 @@
                     <span class="slide-counter"><span id="currentSlideNum">2</span> / 27</span>
                     <button id="nextBtn" class="slide-btn">Next →</button>
                 </div>
+            </div>
+              <!-- Audio Walkthrough -->
+              <div class="audio-player">
+                <h4>🎙️ Project Walkthrough</h4>
+                <p style="margin-bottom: 0; font-size: 15px; color: #555;">Listen to a detailed explanation of the DLS accessibility work and decision-making process</p>
+                <audio controls>
+                    <source src="https://froog.fun/wp-content/uploads/2025/10/Airbnb-dls-work-rec-audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
         </section>
 
@@ -669,7 +673,7 @@
                     <div class="stat-label">Component adoption across all surfaces</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">100%</div>
+                    <div class="stat-number">98%</div>
                     <div class="stat-label">A11y design backlog exhausted</div>
                 </div>
                 <div class="stat-card">
@@ -677,7 +681,7 @@
                     <div class="stat-label">AA compliance achieved</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">3 Phases</div>
+                    <div class="stat-number">Method</div>
                     <div class="stat-label">Iterative feature development</div>
                 </div>
             </div>

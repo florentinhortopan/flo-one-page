@@ -87,7 +87,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.95);
-            z-index: 10000;
+            z-index: 99999;
             justify-content: center;
             align-items: center;
             opacity: 0;
@@ -133,7 +133,7 @@
             justify-content: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            z-index: 10001;
+            z-index: 100000;
         }
 
         .lightbox-close:hover {
@@ -159,7 +159,7 @@
             justify-content: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            z-index: 10001;
+            z-index: 100000;
         }
 
         .lightbox-nav:hover {
@@ -272,7 +272,11 @@
                 img.addEventListener('click', () => openLightbox(index));
             });
 
-            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                closeLightbox();
+            });
             lightboxPrev.addEventListener('click', showPrev);
             lightboxNext.addEventListener('click', showNext);
 

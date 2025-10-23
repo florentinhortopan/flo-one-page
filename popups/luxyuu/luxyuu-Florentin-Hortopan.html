@@ -159,11 +159,12 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.95);
-            z-index: 10000;
+            z-index: 99999;
             justify-content: center;
             align-items: center;
             opacity: 0;
             transition: opacity 0.3s ease;
+            pointer-events: auto;
         }
 
         .lightbox.active {
@@ -189,23 +190,24 @@
         }
 
         .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
             background: rgba(255, 255, 255, 0.3);
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             color: white;
-            font-size: 30px;
+            font-size: 32px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            z-index: 10001;
+            z-index: 999999;
+            pointer-events: auto;
         }
 
         .lightbox-close:hover {
@@ -231,7 +233,7 @@
             justify-content: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            z-index: 10001;
+            z-index: 100000;
         }
 
         .lightbox-nav:hover {
@@ -263,6 +265,15 @@
         /* Large Feature */
         .gallery-item.large {
             grid-column: span 2;
+        }
+
+        /* List styling for transformation details */
+        .transformation-list li::before {
+            content: "→";
+            color: #000;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
         }
 
         /* Responsive */
@@ -341,21 +352,21 @@
         <!-- Comprehensive Transformation Details -->
         <div style="max-width: 800px; margin: 0 auto 60px;">
             <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; margin-bottom: 24px; text-align: center;">Comprehensive Transformation</h2>
-            <ul style="margin: 20px 0; padding-left: 0; list-style: none;">
+            <ul class="transformation-list" style="margin: 20px 0; padding-left: 0; list-style: none;">
                 <li style="font-size: 17px; line-height: 1.7; color: #000; margin-bottom: 12px; padding-left: 28px; position: relative;">
-                    <span style="content: '→'; color: #000; font-weight: 700; position: absolute; left: 0;"><strong>UX/UI Redesign</strong> — Complete platform overhaul focused on conversion optimization</span>
+                    <strong>UX/UI Redesign</strong> — Complete platform overhaul focused on conversion optimization
                 </li>
                 <li style="font-size: 17px; line-height: 1.7; color: #000; margin-bottom: 12px; padding-left: 28px; position: relative;">
-                    <span style="content: '→'; color: #000; font-weight: 700; position: absolute; left: 0;"><strong>Photo Direction</strong> — Art directed product photography shoots ensuring consistent brand aesthetic</span>
+                    <strong>Photo Direction</strong> — Art directed product photography shoots ensuring consistent brand aesthetic
                 </li>
                 <li style="font-size: 17px; line-height: 1.7; color: #000; margin-bottom: 12px; padding-left: 28px; position: relative;">
-                    <span style="content: '→'; color: #000; font-weight: 700; position: absolute; left: 0;"><strong>Operations</strong> — Streamlined fulfillment, inventory management, and customer service</span>
+                    <strong>Operations</strong> — Streamlined fulfillment, inventory management, and customer service
                 </li>
                 <li style="font-size: 17px; line-height: 1.7; color: #000; margin-bottom: 12px; padding-left: 28px; position: relative;">
-                    <span style="content: '→'; color: #000; font-weight: 700; position: absolute; left: 0;"><strong>Marketing Strategy</strong> — Implemented DEM campaigns and affiliate networks (Zanox, TradeDoubler)</span>
+                    <strong>Marketing Strategy</strong> — Implemented DEM campaigns and affiliate networks (Zanox, TradeDoubler)
                 </li>
                 <li style="font-size: 17px; line-height: 1.7; color: #000; margin-bottom: 12px; padding-left: 28px; position: relative;">
-                    <span style="content: '→'; color: #000; font-weight: 700; position: absolute; left: 0;"><strong>B2B Layer</strong> — Built wholesale platform atop existing B2C infrastructure</span>
+                    <strong>B2B Layer</strong> — Built wholesale platform atop existing B2C infrastructure
                 </li>
             </ul>
             
@@ -411,12 +422,27 @@
                 currentIndex = index;
                 updateLightbox();
                 lightbox.classList.add('active');
+                // Prevent clicks on the main modal when lightbox is open
+                document.addEventListener('click', preventModalClicks, true);
                 // Don't affect the main page overflow - keep the popup open
             }
 
             function closeLightbox() {
                 lightbox.classList.remove('active');
+                // Remove the click prevention when lightbox closes
+                document.removeEventListener('click', preventModalClicks, true);
                 // Don't restore main page overflow - popup remains open
+            }
+
+            function preventModalClicks(e) {
+                // If lightbox is active and click is not on lightbox elements, prevent it
+                if (lightbox.classList.contains('active')) {
+                    const isLightboxElement = lightbox.contains(e.target) || e.target === lightbox;
+                    if (!isLightboxElement) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                    }
+                }
             }
 
             function updateLightbox() {
@@ -447,7 +473,14 @@
                 img.addEventListener('click', () => openLightbox(index));
             });
 
-            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                if (lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
             lightboxPrev.addEventListener('click', showPrev);
             lightboxNext.addEventListener('click', showNext);
 

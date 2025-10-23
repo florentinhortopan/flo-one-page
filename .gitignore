@@ -1,0 +1,19 @@
+# Vercel
+.vercel
+
+# Large assets that exceed Vercel limits
+popups/airbnb/assets/
+popups/gopro/assets/
+popups/gap-inc/assets/
+popups/agent-of-presence/assets/
+popups/nagra-opentv/assets/
+
+# Temporary files
+Untitled.mov
+Untitled.mp4
+.DS_Store
+*.tmp
+*.temp
+
+# Scripts
+add-accessibility.sh

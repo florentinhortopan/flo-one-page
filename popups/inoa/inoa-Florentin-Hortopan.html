@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicon-512x512.png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="shortcut icon" href="../../favicon.ico">    
+    <!-- Primary Meta Tags -->
+    <title>INOA - Design Project | Florentin Hortopan</title>
+    <meta name="title" content="INOA - Design Project | Florentin Hortopan">
+    <meta name="description" content="Design work for INOA project by Florentin Hortopan.">
+    <meta name="keywords" content="INOA, Design, Product Design, Florentin Hortopan">
+    <meta name="author" content="Florentin Hortopan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://florentin.us/popups/inoa/inoa-Florentin-Hortopan.html">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#ffffff">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #222;
+        }
+        
+        .header {
+            padding: 60px 40px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #000;
+            font-weight: 300;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 0 60px rgba(255, 255, 255, 0.1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 10001;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 10001;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 768px) {
+            .header { padding: 40px 24px; }
+            h1 { font-size: 32px; }
+            .container { padding: 40px 24px; }
+            .gallery { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>INOA</h1>
+        <p class="subtitle">Design Project</p>
+    </header>
+    
+    <main class="container">
+        <div class="gallery">
+            <img src="assets/Design-is-Art-Everybody-Can-Use-min_pages-to-jpg-0016.jpg" alt="INOA design">
+            <img src="assets/Design-is-Art-Everybody-Can-Use-min_pages-to-jpg-0017.jpg" alt="INOA design details">
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <script>
+        (function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxPrev = document.getElementById('lightboxPrev');
+            const lightboxNext = document.getElementById('lightboxNext');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+            
+            const galleryImages = Array.from(document.querySelectorAll('.gallery img'));
+            let currentIndex = 0;
+
+            function openLightbox(index) {
+                currentIndex = index;
+                updateLightbox();
+                lightbox.classList.add('active');
+                // Don't affect the main page overflow - keep the popup open
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                // Don't restore main page overflow - popup remains open
+            }
+
+            function updateLightbox() {
+                const img = galleryImages[currentIndex];
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+                
+                lightboxPrev.style.display = currentIndex === 0 ? 'none' : 'flex';
+                lightboxNext.style.display = currentIndex === galleryImages.length - 1 ? 'none' : 'flex';
+            }
+
+            function showPrev() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateLightbox();
+                }
+            }
+
+            function showNext() {
+                if (currentIndex < galleryImages.length - 1) {
+                    currentIndex++;
+                    updateLightbox();
+                }
+            }
+
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', () => openLightbox(index));
+            });
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', showPrev);
+            lightboxNext.addEventListener('click', showNext);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrev();
+                if (e.key === 'ArrowRight') showNext();
+            });
+        })();
+    </script>
+</body>
+</html>

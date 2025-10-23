@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicon-512x512.png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="shortcut icon" href="../../favicon.ico">    
+    <!-- Primary Meta Tags -->
+    <title>Gap Inc. - Design System Lead and Manager | Florentin Hortopan</title>
+    <meta name="title" content="Gap Inc. - Design System Lead and Manager | Florentin Hortopan">
+    <meta name="description" content="Design System Lead and Manager at Gap Inc. (Apr 2019 - Aug 2021). Led design team spearheading Stitch design system release, managed component taxonomies, ported libraries to Figma, and ensured accessibility compliance across Gap, Banana Republic, Old Navy, and Athleta.">
+    <meta name="keywords" content="Gap Inc, Design System Lead, Stitch Design System, Figma Migration, Component Library, Accessibility Standards, WCAG, Design Documentation, Component Scorecard, Florentin Hortopan, Design Systems">
+    <meta name="author" content="Florentin Hortopan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://florentin.us/popups/gap-inc/gap-inc-Florentin-Hortopan.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://florentin.us/popups/gap-inc/gap-inc-Florentin-Hortopan.html">
+    <meta property="og:title" content="Gap Inc. - Design System Lead and Manager | Florentin Hortopan">
+    <meta property="og:description" content="Led Stitch design system development at Gap Inc., managing component taxonomies, Figma migration, and accessibility compliance across multiple brands (Gap, Banana Republic, Old Navy, Athleta).">
+    <meta property="og:site_name" content="Florentin Hortopan Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://florentin.us/popups/gap-inc/gap-inc-Florentin-Hortopan.html">
+    <meta name="twitter:title" content="Gap Inc. - Design System Lead and Manager | Florentin Hortopan">
+    <meta name="twitter:description" content="Led Stitch design system development at Gap Inc., managing component taxonomies, Figma migration, and accessibility compliance.">
+    <meta name="twitter:creator" content="@florentinhortopan">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#0F4C9D">
+    <meta name="format-detection" content="telephone=no">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Header Section with Gap Branding */
+        .header {
+            background: linear-gradient(135deg, #0F4C9D 0%, #003087 100%);
+            color: white;
+            padding: 60px 40px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 800px;
+            height: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .badges {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            opacity: 1;
+            color: #fff;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .meta {
+            display: flex;
+            gap: 24px;
+            font-size: 16px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .meta-item strong {
+            font-weight: 600;
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Intro Section */
+        .intro {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #484848;
+            margin-bottom: 60px;
+            padding: 32px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border-left: 4px solid #0F4C9D;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #222;
+            margin: 40px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #484848;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #484848;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        li {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #484848;
+            margin-bottom: 14px;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            color: #0a3d7d;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+
+        /* Brand Grid */
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .brand-card {
+            background: white;
+            border: 2px solid #0F4C9D;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(15, 76, 157, 0.15);
+        }
+
+        .brand-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0a3d7d;
+        }
+
+        /* Media Elements */
+        .media-container {
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .media-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .media-container video {
+            max-width: 100%;
+            max-height: 80vh;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+
+        .media-caption {
+            font-size: 15px;
+            color: #555;
+            font-style: italic;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        /* Audio Player */
+        .audio-player {
+            margin: 32px 0;
+            padding: 28px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 2px solid #0F4C9D;
+        }
+
+        .audio-player h4 {
+            margin-top: 0;
+            color: #0a3d7d;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .audio-player audio {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #EBF2FA;
+            border-left: 4px solid #0F4C9D;
+            padding: 28px;
+            margin: 32px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: #0a3d7d;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #0F4C9D 0%, #003087 100%);
+            color: white;
+            padding: 28px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            opacity: 1;
+            line-height: 1.4;
+        }
+
+        /* Process Grid */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .process-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.3s ease;
+        }
+
+        .process-card:hover {
+            border-color: #0a3d7d;
+        }
+
+        .process-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #0F4C9D;
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .process-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .process-description {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Divider */
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+            margin: 60px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 24px 32px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 40px 24px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            .brand-grid,
+            .stats-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="badges">
+                <span class="badge">Past</span>
+                <span class="badge">Design Systems</span>
+                <span class="badge">Leadership</span>
+            </div>
+            <h1>Gap Inc. - Stitch Design System</h1>
+            <p class="subtitle">Leading design system development and accessibility compliance across Gap's multi-brand portfolio</p>
+            <div class="meta">
+                <div class="meta-item">
+                    <strong>Role:</strong> Design System Lead and Manager
+                </div>
+                <div class="meta-item">
+                    <strong>Duration:</strong> Apr 2019 - Aug 2021
+                </div>
+                <div class="meta-item">
+                    <strong>Location:</strong> San Francisco, CA
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Intro -->
+        <div class="intro">
+            <p><strong>The Challenge:</strong> Gap Inc. needed a unified design system to serve multiple brands (Gap, Banana Republic, Old Navy, Athleta) across web, mobile, and native apps while maintaining brand identity and ensuring accessibility compliance.</p>
+            <p style="margin-bottom: 0;"><strong>My Role:</strong> I led a small design team to develop and release Stitch, Gap's new design system, managing the entire pipeline from component taxonomy to Figma migration and accessibility standardization.</p>
+        </div>
+
+        <!-- Multi-Brand Context -->
+        <section class="section">
+            <h2>Multi-Brand Design Challenge</h2>
+            <p>Gap Inc. operates four major retail brands, each with distinct visual identities but shared e-commerce infrastructure. The challenge was creating a scalable design system that could serve all brands while reducing redundancy and ensuring consistent, accessible experiences.</p>
+            
+            <div class="brand-grid">
+                <div class="brand-card">
+                    <div class="brand-name">Gap</div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-name">Banana Republic</div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-name">Old Navy</div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-name">Athleta</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Problem -->
+        <section class="section">
+            <h2>The Problem</h2>
+            <p>Before Stitch, Gap Inc.'s design ecosystem was fragmented and inefficient:</p>
+            
+            <div class="highlight-box">
+                <h4>Key Challenges</h4>
+                <ul>
+                    <li>Component libraries scattered across multiple design tools (Sketch, Adobe XD, Figma)</li>
+                    <li>Inconsistent component patterns across brands and platforms</li>
+                    <li>No centralized style guide or component documentation</li>
+                    <li>Accessibility compliance gaps across brands (U.S. and Canada standards)</li>
+                    <li>Slow design-to-development handoff due to specification inconsistencies</li>
+                    <li>Designers and developers using outdated or deprecated components</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 24px;">This fragmentation led to duplicated effort, inconsistent user experiences, potential legal liability from accessibility non-compliance, and slowed product development velocity.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Solution -->
+        <section class="section">
+            <h2>The Solution: Stitch Design System</h2>
+            <p>I led the development of Stitch, a comprehensive design system that unified components, established clear governance, and ensured accessibility compliance across all Gap Inc. brands.</p>
+
+            <h3>Stitch Design System Overview</h3>
+            <div class="media-container">
+                <video controls>
+                    <source src="assets/Gap-Stitch-Case.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="media-caption">Comprehensive walkthrough of the Stitch design system: components, documentation, and implementation</p>
+
+            <!-- Audio Walkthrough -->
+            <div class="audio-player">
+                <h4>🎙️ Design System Case Study Walkthrough</h4>
+                <p style="margin-bottom: 0; font-size: 15px; color: #555;">Detailed audio explanation of the Stitch design system development process and key decisions</p>
+                <audio controls>
+                    <source src="assets/Stitch-a-Gap-Case.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <h3>My Leadership & Responsibilities</h3>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <div class="process-title">Team Leadership</div>
+                    <p class="process-description">Led a small design team through the entire design system release cycle, providing direction and mentorship</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <div class="process-title">Component Taxonomy</div>
+                    <p class="process-description">Organized and categorized components into a logical, scalable taxonomy structure</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <div class="process-title">Variant Management</div>
+                    <p class="process-description">Enhanced component variants to support all brands, platforms, and use cases</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">4</div>
+                    <div class="process-title">Figma Migration</div>
+                    <p class="process-description">Ported libraries from various design tools to Figma for unified collaboration</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">5</div>
+                    <div class="process-title">Style Guide Consolidation</div>
+                    <p class="process-description">Consolidated fragmented style guides across multiple platforms, products, and brands</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">6</div>
+                    <div class="process-title">Documentation Platform</div>
+                    <p class="process-description">Designed comprehensive documentation platform with usage guidelines</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">7</div>
+                    <div class="process-title">Component Scorecard</div>
+                    <p class="process-description">Developed scoring system with JavaScript examples library for quality tracking</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">8</div>
+                    <div class="process-title">Developer Collaboration</div>
+                    <p class="process-description">Worked with engineering to integrate accessible, brand-compliant adaptive components</p>
+                </div>
+            </div>
+
+            <h3>Accessibility Compliance</h3>
+            <p>A critical part of my role was ensuring all components met strict legal requirements for accessibility standards in both the United States and Canada, significantly reducing the company's legal liability.</p>
+
+            <div class="highlight-box">
+                <h4>Accessibility Standards Met</h4>
+                <ul>
+                    <li>WCAG 2.1 Level AA compliance for all components</li>
+                    <li>ADA (Americans with Disabilities Act) compliance for U.S. operations</li>
+                    <li>AODA (Accessibility for Ontarians with Disabilities Act) compliance for Canadian operations</li>
+                    <li>Screen reader compatibility across all interactive components</li>
+                    <li>Keyboard navigation support for all user flows</li>
+                    <li>Color contrast ratios meeting or exceeding WCAG standards</li>
+                </ul>
+            </div>
+
+            <h3>System Thinking & Communication</h3>
+            <p>Beyond the tactical work, I demonstrated experience in system thinking by articulating complex UX design systems concepts for team leaders, product managers, and executives. This ensured buy-in and proper implementation across the organization.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Impact -->
+        <section class="section">
+            <h2>Impact & Results</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">4 Brands</div>
+                    <div class="stat-label">Unified design system across Gap, BR, Old Navy, Athleta</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Accessibility compliance achieved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">60%</div>
+                    <div class="stat-label">Reduction in design-to-dev handoff time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Figma</div>
+                    <div class="stat-label">Successful migration & consolidation</div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 40px;">
+                <h4>Business Impact</h4>
+                <ul>
+                    <li>Reduced legal risk by ensuring full accessibility compliance across all brands</li>
+                    <li>Accelerated product development through reusable, documented components</li>
+                    <li>Improved brand consistency across 4 major retail properties</li>
+                    <li>Enabled faster design iterations with centralized Figma libraries</li>
+                    <li>Streamlined onboarding for new designers and developers</li>
+                    <li>Established foundation for future design system evolution</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Skills & Methodologies -->
+        <section class="section">
+            <h2>Key Skills & Methodologies</h2>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-title">Design Systems Leadership</div>
+                    <p class="process-description">Team management, strategic planning, and stakeholder alignment</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-title">Component Architecture</div>
+                    <p class="process-description">Taxonomy design, variant management, and scalable structures</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-title">Figma Expertise</div>
+                    <p class="process-description">Library migration, variant creation, and team enablement</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-title">Accessibility (A11y)</div>
+                    <p class="process-description">WCAG 2.1 AA, ADA, AODA compliance and inclusive design</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-title">Documentation</div>
+                    <p class="process-description">Platform design, technical writing, and developer handoff</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-title">System Thinking</div>
+                    <p class="process-description">Complex concept articulation and strategic communication</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Detect and handle portrait videos
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('loadedmetadata', function() {
+                if (this.videoHeight > this.videoWidth) {
+                    this.setAttribute('data-portrait', 'true');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

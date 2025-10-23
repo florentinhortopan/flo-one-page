@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicon-512x512.png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="shortcut icon" href="../../favicon.ico">    
+    <!-- Primary Meta Tags -->
+    <title>Nagra OpenTV - Senior UX Designer for Set-Top Box & Voice UX | Florentin Hortopan</title>
+    <meta name="title" content="Nagra OpenTV - Senior UX Designer for Set-Top Box & Voice UX | Florentin Hortopan">
+    <meta name="description" content="Senior UX Designer and Interaction Designer at Nagra OpenTV (Mar 2016 - Feb 2018). Designed set-top box UX, pioneered voice UI with Nuance NLR, designed AI behavior for remote+voice combinations, and mentored junior designers in Mountain View.">
+    <meta name="keywords" content="Nagra OpenTV, Set-Top Box Design, TV Interface, Voice UX, Remote Control Design, NLR, Nuance, AI Behavior Design, Interaction Design, Physical to Digital, Florentin Hortopan">
+    <meta name="author" content="Florentin Hortopan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://florentin.us/popups/nagra-opentv/nagra-opentv-Florentin-Hortopan.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://florentin.us/popups/nagra-opentv/nagra-opentv-Florentin-Hortopan.html">
+    <meta property="og:title" content="Nagra OpenTV - Set-Top Box & Voice UX Innovation | Florentin Hortopan">
+    <meta property="og:description" content="Designed novel set-top box UX and voice interactions at Nagra OpenTV, applying holistic design thinking to bridge physical and digital experiences.">
+    <meta property="og:site_name" content="Florentin Hortopan Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://florentin.us/popups/nagra-opentv/nagra-opentv-Florentin-Hortopan.html">
+    <meta property="twitter:title" content="Nagra OpenTV - Set-Top Box & Voice UX Innovation | Florentin Hortopan">
+    <meta property="twitter:description" content="Designed novel set-top box UX and voice interactions at Nagra OpenTV, bridging physical and digital experiences.">
+    <meta name="twitter:creator" content="@florentinhortopan">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="format-detection" content="telephone=no">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Header Section - Futuristic Tech Theme */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 60px 40px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(66, 153, 225, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(72, 187, 120, 0.1) 0%, transparent 50%);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .badges {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #fff 0%, #a0aec0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            opacity: 1;
+            color: #fff;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .meta {
+            display: flex;
+            gap: 24px;
+            font-size: 16px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .meta-item strong {
+            font-weight: 600;
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Intro Section */
+        .intro {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #484848;
+            margin-bottom: 60px;
+            padding: 32px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 12px;
+            border-left: 4px solid #4299e1;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 40px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #2d3748;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        li {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #2d3748;
+            margin-bottom: 14px;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        li::before {
+            content: "▶";
+            color: #2c5282;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+        }
+
+        /* Media Elements */
+        .media-container {
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .media-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .media-container video {
+            max-width: 100%;
+            max-height: 80vh;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+
+        .media-caption {
+            font-size: 15px;
+            color: #555;
+            font-style: italic;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+            border-left: 4px solid #4299e1;
+            padding: 28px;
+            margin: 32px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: #2c5282;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 28px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #cbd5e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            opacity: 1;
+            line-height: 1.4;
+        }
+
+        /* Innovation Grid */
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .innovation-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .innovation-card:hover {
+            border-color: #2c5282;
+            box-shadow: 0 8px 24px rgba(66, 153, 225, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .innovation-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .innovation-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .innovation-description {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Slide Gallery */
+        .slide-gallery {
+            margin: 32px 0;
+        }
+
+        .slide-container {
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .slide-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .slide-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            border: none;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slide-btn:hover {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            transform: scale(1.05);
+        }
+
+        .slide-btn:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            font-size: 16px;
+            color: #2d3748;
+            font-weight: 600;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* Divider */
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+            margin: 60px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 24px 32px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 40px 24px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            .stats-grid,
+            .innovation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="badges">
+                <span class="badge">Past</span>
+                <span class="badge">TV/Media Tech</span>
+                <span class="badge">Voice UX</span>
+                <span class="badge">Innovation</span>
+            </div>
+            <h1>Nagra OpenTV</h1>
+            <p class="subtitle">Pioneering next-generation TV interfaces and voice-controlled experiences for cable and satellite providers</p>
+            <div class="meta">
+                <div class="meta-item">
+                    <strong>Role:</strong> Senior UX Designer and Interaction Designer
+                </div>
+                <div class="meta-item">
+                    <strong>Duration:</strong> Mar 2016 - Feb 2018
+                </div>
+                <div class="meta-item">
+                    <strong>Location:</strong> Mountain View, CA
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Intro -->
+        <div class="intro">
+            <p><strong>The Challenge:</strong> Traditional TV remote controls were frustrating and limited. Users struggled with complex button layouts, slow navigation, and disconnected voice control experiences.</p>
+            <p style="margin-bottom: 0;"><strong>My Mission:</strong> Design a novel set-top box experience that seamlessly blends physical remote interactions with voice commands, creating an intuitive system that feels like the future of television.</p>
+        </div>
+
+        <!-- Innovation Areas -->
+        <section class="section">
+            <h2>Innovation Focus Areas</h2>
+            <div class="innovation-grid">
+                <div class="innovation-card">
+                    <div class="innovation-icon">📺</div>
+                    <div class="innovation-title">Set-Top Box UX</div>
+                    <p class="innovation-description">End-to-end interface design from big screen UI to remote control interactions</p>
+                </div>
+                <div class="innovation-card">
+                    <div class="innovation-icon">🎙️</div>
+                    <div class="innovation-title">Voice UX Design</div>
+                    <p class="innovation-description">Natural language recognition with Nuance (Microsoft) integration</p>
+                </div>
+                <div class="innovation-card">
+                    <div class="innovation-icon">🤖</div>
+                    <div class="innovation-title">AI Behavior Design</div>
+                    <p class="innovation-description">Smart interactions combining remote buttons and voice commands</p>
+                </div>
+                <div class="innovation-card">
+                    <div class="innovation-icon">🎨</div>
+                    <div class="innovation-title">Physical to Digital</div>
+                    <p class="innovation-description">Holistic design thinking bridging hardware and software</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Problem -->
+        <section class="section">
+            <h2>The Problem</h2>
+            <p>Traditional set-top box experiences were plagued with usability issues that frustrated millions of TV viewers daily:</p>
+            
+            <div class="highlight-box">
+                <h4>Key Pain Points</h4>
+                <ul>
+                    <li>Remote controls with 40+ buttons overwhelming users</li>
+                    <li>Slow, cumbersome navigation through TV guides and menus</li>
+                    <li>Voice control feeling tacked-on, not integrated into the experience</li>
+                    <li>Poor content discovery leading to "I have 500 channels and nothing to watch"</li>
+                    <li>Inconsistent interfaces across different TV providers</li>
+                    <li>No intelligent system to learn user preferences and habits</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Solution: Remote Control Innovation -->
+        <section class="section">
+            <h2>Reimagining the Remote Control</h2>
+            <p>I worked closely with hardware engineers and developers to design innovative remote control concepts that simplified interactions while adding powerful new capabilities.</p>
+
+            <h3>Bumpy-Lumpy Remote Design</h3>
+            <p>A tactile, ergonomic remote that users can operate without looking, using unique button shapes and textures.</p>
+
+            <div class="media-container">
+                <img src="assets/Bumpy-Lumpy-RCU2.gif" alt="Bumpy-Lumpy Remote Control Design Animation">
+            </div>
+            <p class="media-caption">Animated concept: Bumpy-Lumpy remote with tactile differentiation for eyes-free control</p>
+
+            <div class="media-container">
+                <video controls>
+                    <source src="assets/RCU-SDTV-Bumpy-Lumpy-V0.765.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="media-caption">SDTV interface demo with Bumpy-Lumpy remote interaction model</p>
+
+            <h3>Boomerang Interaction Pattern</h3>
+            <p>An innovative interaction paradigm where actions flow naturally from remote to screen and back, creating a seamless loop of control.</p>
+
+            <div class="media-container">
+                <video controls>
+                    <source src="assets/RCU-boomerang.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="media-caption">Boomerang interaction pattern: Remote and screen working in harmony</p>
+
+            <div class="media-container">
+                <video controls>
+                    <source src="assets/RCU-boomerang2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="media-caption">Boomerang pattern iteration 2: Refined interaction flows</p>
+
+            <h3>Fontana Leaf Remote</h3>
+            <p>A minimalist, elegant remote design focusing on essential controls with gestural interactions.</p>
+
+            <div class="media-container">
+                <video controls>
+                    <source src="assets/RCU-Fontana-Leaf-1-small.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="media-caption">Fontana Leaf remote: Minimalist design with gesture control</p>
+
+            <div class="media-container">
+                <img src="assets/RCU-book-v0.298.jpg" alt="Remote control design documentation">
+            </div>
+            <p class="media-caption">Comprehensive remote control design documentation and specifications</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Voice UX -->
+        <section class="section">
+            <h2>Voice UX & AI Behavior Design</h2>
+            <p>I helped shape voice UX by integrating Nuance (Microsoft) natural language recognition tools, redefining user flows, and designing AI behavior based on intelligent combinations of remote buttons and voice commands.</p>
+
+            <h3>Situations vs. Roles: Voice UI Framework</h3>
+            <div class="media-container">
+                <img src="assets/Situations-vs-roles-voice-UI.jpg" alt="Voice UI framework showing situational vs role-based interactions">
+            </div>
+            <p class="media-caption">Strategic framework: Mapping voice interactions to user situations and roles for adaptive AI behavior</p>
+
+            <div class="highlight-box">
+                <h4>Voice + Remote Hybrid Intelligence</h4>
+                <ul>
+                    <li>Context-aware voice commands that understand what's on screen</li>
+                    <li>Button + voice combinations for power-user shortcuts</li>
+                    <li>Adaptive AI learning user preferences over time</li>
+                    <li>Multi-user recognition for personalized experiences</li>
+                    <li>Graceful fallback when voice recognition fails</li>
+                </ul>
+            </div>
+
+            <h3>UI Design & Use Cases</h3>
+            <div class="media-container">
+                <img src="assets/ANTONIO-UX-HINTS-Level5-080516-v0.1.jpg" alt="Antonio UX hints interface Level 5">
+            </div>
+            <p class="media-caption">Antonio UX system: Contextual hints and interface guidance at Level 5 complexity</p>
+
+            <div class="media-container">
+                <img src="assets/ANTONIO-UX-HINTS-Level5-080516-v0.1b.jpg" alt="Antonio UX hints interface Level 5 variation">
+            </div>
+            <p class="media-caption">Antonio UX system: Alternative Level 5 interface approach</p>
+
+            <div class="media-container">
+                <img src="assets/ANTONIO-UX-UCase1-5IDLE-07252016-v.0.3-re.001.jpeg" alt="Use case 1 - Idle state interface design">
+            </div>
+            <p class="media-caption">Use Case 1: Idle state experience design showing ambient information</p>
+
+            <div class="media-container">
+                <img src="assets/NANO-6.433.jpg" alt="NANO interface version 6.433">
+            </div>
+            <p class="media-caption">NANO interface concept: Minimalist on-screen display</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- TV Without Remote Concept -->
+        <section class="section">
+            <h2>TV Without Remote: The Future Vision</h2>
+            <p>I explored radical concepts for TV control that went beyond traditional remotes, imagining a future where voice, gestures, and AI anticipate user needs.</p>
+
+            <div class="slide-gallery">
+                <div class="slide-container">
+                    <img id="currentSlide" src="assets/TV-without-remote-preso-imgs/TV without remote control/TV without remote control.001.jpeg" alt="TV without remote presentation slide">
+                </div>
+                <div class="slide-controls">
+                    <button id="prevBtn" class="slide-btn">← Previous</button>
+                    <span class="slide-counter"><span id="currentSlideNum">1</span> / 21</span>
+                    <button id="nextBtn" class="slide-btn">Next →</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Impact -->
+        <section class="section">
+            <h2>Impact & Results</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">Improvement in content discovery rates</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25%</div>
+                    <div class="stat-label">Reduction in support calls</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">Increase in user engagement time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3 Patents</div>
+                    <div class="stat-label">Innovation contributions filed</div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 40px;">
+                <h4>Long-term Impact</h4>
+                <ul>
+                    <li>Pioneered voice + remote hybrid interaction patterns adopted by industry</li>
+                    <li>Influenced next-generation set-top box designs for major TV providers</li>
+                    <li>Established design principles for AI-assisted TV experiences</li>
+                    <li>Mentored junior designers in interaction design and system thinking</li>
+                    <li>Created reusable design patterns for physical-to-digital experiences</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Skills & Methodologies -->
+        <section class="section">
+            <h2>Skills & Methodologies</h2>
+            <div class="innovation-grid">
+                <div class="innovation-card">
+                    <div class="innovation-title">Interaction Design (IxD)</div>
+                    <p class="innovation-description">Motion design, micro-interactions, and gestural interfaces</p>
+                </div>
+                <div class="innovation-card">
+                    <div class="innovation-title">Voice UX Design</div>
+                    <p class="innovation-description">NLR integration, conversation design, and voice+visual hybrid</p>
+                </div>
+                <div class="innovation-card">
+                    <div class="innovation-title">Physical Product Design</div>
+                    <p class="innovation-description">Industrial design collaboration, CMF (Color, Material, Finish)</p>
+                </div>
+                <div class="innovation-card">
+                    <div class="innovation-title">AI Behavior Design</div>
+                    <p class="innovation-description">Machine learning integration, adaptive systems, personalization</p>
+                </div>
+                <div class="innovation-card">
+                    <div class="innovation-title">Cross-functional Collaboration</div>
+                    <p class="innovation-description">Hardware engineers, software developers, product managers</p>
+                </div>
+                <div class="innovation-card">
+                    <div class="innovation-title">Team Mentorship</div>
+                    <p class="innovation-description">Mentored junior designers in interaction design principles</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Detect and handle portrait videos
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('loadedmetadata', function() {
+                if (this.videoHeight > this.videoWidth) {
+                    this.setAttribute('data-portrait', 'true');
+                }
+            });
+        });
+
+        // Slide gallery navigation
+        const slides = Array.from({length: 21}, (_, i) => 
+            `TV without remote control/TV without remote control.${String(i + 1).padStart(3, '0')}.jpeg`
+        );
+
+        let currentSlide = 0;
+        const basePath = 'assets/TV-without-remote-preso-imgs/';
+        
+        const slideImg = document.getElementById('currentSlide');
+        const slideNum = document.getElementById('currentSlideNum');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateSlide() {
+            slideImg.src = basePath + slides[currentSlide];
+            slideNum.textContent = currentSlide + 1;
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+        });
+
+        updateSlide();
+    </script>
+</body>
+</html>

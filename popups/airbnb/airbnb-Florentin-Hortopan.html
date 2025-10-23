@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicon-512x512.png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="shortcut icon" href="../../favicon.ico">    
+    <!-- Primary Meta Tags -->
+    <title>Airbnb - Design Language System Accessibility | Florentin Hortopan</title>
+    <meta name="title" content="Airbnb - Design Language System Accessibility | Florentin Hortopan">
+    <meta name="description" content="Senior UX Designer at Airbnb working on Design Language System accessibility improvements. Led alt-text feature development, exhausted a11y design backlog, and improved component adoption across all surfaces.">
+    <meta name="keywords" content="Airbnb, Design Language System, DLS, Accessibility, Alt-text, WCAG, Inclusive Design, Design Systems, Component Library, Florentin Hortopan">
+    <meta name="author" content="Florentin Hortopan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://florentin.us/popups/airbnb/airbnb-Florentin-Hortopan.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://florentin.us/popups/airbnb/airbnb-Florentin-Hortopan.html">
+    <meta property="og:title" content="Airbnb - Design Language System Accessibility | Florentin Hortopan">
+    <meta property="og:description" content="Led accessibility improvements for Airbnb's Design Language System, developing alt-text features and increasing component adoption to 60%+ across all surfaces.">
+    <meta property="og:site_name" content="Florentin Hortopan Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://florentin.us/popups/airbnb/airbnb-Florentin-Hortopan.html">
+    <meta name="twitter:title" content="Airbnb - Design Language System Accessibility | Florentin Hortopan">
+    <meta name="twitter:description" content="Led accessibility improvements for Airbnb's Design Language System, developing alt-text features and increasing component adoption.">
+    <meta name="twitter:creator" content="@florentinhortopan">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#FF5A5F">
+    <meta name="format-detection" content="telephone=no">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cereal:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Header Section with Airbnb Branding */
+        .header {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF385C 100%);
+            color: white;
+            padding: 60px 40px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .badges {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            opacity: 1;
+            color: #fff;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .meta {
+            display: flex;
+            gap: 24px;
+            font-size: 16px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .meta-item strong {
+            font-weight: 600;
+        }
+
+        /* Hero Image Section */
+        .hero-image {
+            width: 100%;
+            max-height: 500px;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Intro Section */
+        .intro {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #484848;
+            margin-bottom: 60px;
+            padding: 32px;
+            background: #f7f7f7;
+            border-radius: 8px;
+            border-left: 4px solid #FF5A5F;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #222;
+            margin: 40px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #484848;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #484848;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        li {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #484848;
+            margin-bottom: 14px;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        li::before {
+            content: "✓";
+            color: #c01018;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+
+        /* Goals Section */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .goal-card {
+            background: white;
+            border: 2px solid #FF5A5F;
+            border-radius: 12px;
+            padding: 28px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(255, 90, 95, 0.15);
+        }
+
+        .goal-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #c01018;
+            margin-bottom: 8px;
+        }
+
+        .goal-description {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Media Elements */
+        .media-container {
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .media-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .media-container video {
+            max-width: 100%;
+            max-height: 80vh;
+            width: auto;
+            height: auto;
+            display: block;
+        }
+
+        .media-caption {
+            font-size: 15px;
+            color: #555;
+            font-style: italic;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        /* Audio Player */
+        .audio-player {
+            margin: 32px 0;
+            padding: 24px;
+            background: #f7f7f7;
+            border-radius: 12px;
+            border: 2px solid #FF5A5F;
+        }
+
+        .audio-player h4 {
+            margin-top: 0;
+            color: #c01018;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .audio-player audio {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        /* Slide Gallery */
+        .slide-gallery {
+            margin: 32px 0;
+        }
+
+        .slide-container {
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .slide-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .slide-btn {
+            padding: 10px 20px;
+            background: #FF5A5F;
+            color: white;
+            border: none;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .slide-btn:hover {
+            background: #FF385C;
+        }
+
+        .slide-btn:disabled {
+            background: #ddd;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            font-size: 16px;
+            color: #484848;
+            font-weight: 600;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: #FFF8F6;
+            border-left: 4px solid #FF5A5F;
+            padding: 28px;
+            margin: 32px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: #c01018;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF385C 100%);
+            color: white;
+            padding: 28px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            opacity: 1;
+            line-height: 1.4;
+        }
+
+        /* Phase Badges */
+        .phase-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #FF5A5F;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        /* Divider */
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+            margin: 60px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 24px 32px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 40px 24px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            .goals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="badges">
+                <span class="badge">Recent</span>
+                <span class="badge">Design Systems</span>
+                <span class="badge">Accessibility</span>
+            </div>
+            <h1>Airbnb Design Language System</h1>
+            <p class="subtitle">Leading accessibility improvements and component adoption across Airbnb's global platform</p>
+            <div class="meta">
+                <div class="meta-item">
+                    <strong>Role:</strong> Senior UX Designer (Contract)
+                </div>
+                <div class="meta-item">
+                    <strong>Focus:</strong> DLS Accessibility & Adoption
+                </div>
+                <div class="meta-item">
+                    <strong>Organization:</strong> Critical Mass for Airbnb
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+        <img src="assets/Airbnb - DLS/AirDLS-Flo-Pres-May-2022-jpg-slides/AirDLS-FLO-pres-May-2022.001.jpeg" alt="AirDLS - Airbnb Design Language System">
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Intro -->
+        <div class="intro">
+            <p><strong>The Challenge:</strong> Airbnb's Design Language System (DLS) had less than 60% adoption across product surfaces, with a significant accessibility backlog preventing inclusive experiences for all users.</p>
+            <p style="margin-bottom: 0;"><strong>My Mission:</strong> Drive component adoption, eliminate the accessibility design backlog, and evolve the DLS to support Airbnb's commitment to inclusive design.</p>
+        </div>
+
+        <!-- Project Goals -->
+        <section class="section">
+            <h2>Project Goals</h2>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-title">Use All New Components</div>
+                    <p class="goal-description">For all surfaces with less than 60% new DLS</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-title">Make It Accessible</div>
+                    <p class="goal-description">Exhausting all a11y design backlog</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-title">Fix and Evolve DLS</div>
+                    <p class="goal-description">Consolidating libraries and engaging with DLS users</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Problem -->
+        <section class="section">
+            <h2>The Problem</h2>
+            <p>Airbnb's Design Language System was facing critical challenges that impacted both the user experience and designer/developer efficiency:</p>
+            
+            <div class="highlight-box">
+                <h4>Key Challenges</h4>
+                <ul>
+                    <li>Multiple product surfaces using outdated components (less than 60% DLS adoption)</li>
+                    <li>Growing accessibility backlog creating barriers for users with disabilities</li>
+                    <li>No standardized way to add alt-text to images across the platform</li>
+                    <li>Fragmented component libraries across different design tools</li>
+                    <li>Designers and developers lacking clear guidance on implementing accessible patterns</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 24px;">The lack of alt-text functionality was particularly problematic—screen reader users couldn't access image content, violating WCAG accessibility standards and Airbnb's commitment to inclusive design.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Solution: Alt-text Feature Development -->
+        <section class="section">
+            <h2>The Solution: Systematic Accessibility Improvements</h2>
+            <p>I led a comprehensive initiative to address these challenges, with a primary focus on developing an alt-text feature that could be implemented across all Airbnb surfaces. This work involved multiple iterations, stakeholder alignment, and cross-functional collaboration.</p>
+
+            <h3>Design Process & Audit</h3>
+            <p>I conducted a thorough audit of existing components and interfaces, documenting accessibility gaps and component usage patterns across different product areas.</p>
+
+            <div class="media-container">
+                <img src="assets/Airbnb - DLS/AirDLS-Flo-Pres-May-2022-jpg-slides/AirDLS-FLO-pres-May-2022.005.jpeg" alt="Design audit showing component annotations and accessibility review">
+                <div class="media-caption">Comprehensive design audit: All parts reviewed and annotated for accessibility improvements</div>
+            </div>
+
+            <h3>Alt-text Feature: Iterative Development</h3>
+            <p>The alt-text feature went through three major iterations, each addressing different stakeholder needs and technical constraints while maintaining usability and accessibility standards.</p>
+
+            <h4>Phase I: Low Hanging Fruit</h4>
+            <span class="phase-badge">Initial Implementation</span>
+            <p>The first phase focused on getting a basic alt-text feature into production quickly. Since no alt-text input field existed on desktop or mobile interfaces, I worked with developers to implement a simple text area as a discreet label.</p>
+
+            <div class="media-container">
+                <video controls>
+                    <source src="assets/Airbnb - DLS/Alt-text-before-after-just-feature-hb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="media-caption">Phase I: Before and after comparison showing the initial alt-text feature implementation</p>
+
+            <div class="media-container">
+                <img src="assets/Airbnb - DLS/AirDLS-Flo-Pres-May-2022-jpg-slides/AirDLS-FLO-pres-May-2022.010.jpeg" alt="Phase 1 implementation showing text area for alt-text">
+            </div>
+            <p class="media-caption">Adding a simple text field with keyboard shortcuts guidance</p>
+
+            <h4>Phase II: Enhanced Discoverability</h4>
+            <span class="phase-badge">Second Iteration</span>
+            <p>Based on user feedback, the second iteration improved feature discoverability and provided better contextual guidance for hosts uploading photos.</p>
+
+            <div class="media-container">
+                <video controls>
+                    <source src="assets/Airbnb - DLS/Alt-text-second-Iteration.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="media-caption">Phase II: Improved UI with better visual hierarchy and helper text</p>
+
+            <h4>Phase III: Optimized Experience</h4>
+            <span class="phase-badge">Final Iteration</span>
+            <p>The final iteration refined the interaction patterns, improved the visual design, and ensured consistency across all photo upload touchpoints.</p>
+
+            <div class="media-container">
+                <video controls>
+                    <source src="assets/Airbnb - DLS/Alt-text-third-Iteration.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="media-caption">Phase III: Polished final design with optimized workflows</p>
+
+            <!-- Audio Walkthrough -->
+            <div class="audio-player">
+                <h4>🎙️ Project Walkthrough</h4>
+                <p style="margin-bottom: 0; font-size: 15px; color: #555;">Listen to a detailed explanation of the DLS accessibility work and decision-making process</p>
+                <audio controls>
+                    <source src="assets/Airbnb-dls-work-rec-audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <h3>Design System Consolidation</h3>
+            <p>Beyond the alt-text feature, I worked on consolidating component libraries and improving DLS documentation to support designers and developers.</p>
+
+            <div class="highlight-box">
+                <h4>System-Level Improvements</h4>
+                <ul>
+                    <li>Standardized component variants across desktop and mobile</li>
+                    <li>Created comprehensive accessibility guidelines for each component</li>
+                    <li>Established clear processes for designers to contribute to DLS</li>
+                    <li>Improved component documentation with code examples</li>
+                    <li>Facilitated workshops to increase DLS adoption across product teams</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Additional Context Slides -->
+        <section class="section">
+            <h2>Additional Project Insights</h2>
+            <p>Explore the full presentation deck to see detailed annotations, design decisions, and the complete scope of accessibility improvements made to the Airbnb DLS.</p>
+
+            <div class="slide-gallery">
+                <div class="slide-container">
+                    <img id="currentSlide" src="assets/Airbnb - DLS/AirDLS-Flo-Pres-May-2022-jpg-slides/AirDLS-FLO-pres-May-2022.002.jpeg" alt="Presentation slide">
+                </div>
+                <div class="slide-controls">
+                    <button id="prevBtn" class="slide-btn">← Previous</button>
+                    <span class="slide-counter"><span id="currentSlideNum">2</span> / 27</span>
+                    <button id="nextBtn" class="slide-btn">Next →</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Impact -->
+        <section class="section">
+            <h2>Impact & Results</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">60%+</div>
+                    <div class="stat-label">Component adoption across all surfaces</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">A11y design backlog exhausted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">WCAG 2.1</div>
+                    <div class="stat-label">AA compliance achieved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3 Phases</div>
+                    <div class="stat-label">Iterative feature development</div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 40px;">
+                <h4>Long-term Impact</h4>
+                <ul>
+                    <li>Improved screen reader experience for thousands of users globally</li>
+                    <li>Established accessibility as a core design principle in DLS</li>
+                    <li>Created reusable patterns for future accessibility features</li>
+                    <li>Increased designer confidence in creating accessible experiences</li>
+                    <li>Reduced technical debt through systematic component consolidation</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Skills & Methodologies -->
+        <section class="section">
+            <h2>Skills & Methodologies</h2>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-title">Design Systems</div>
+                    <p class="goal-description">Component library management, versioning, and documentation</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-title">Accessibility (A11y)</div>
+                    <p class="goal-description">WCAG 2.1 compliance, screen reader optimization, inclusive design</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-title">Stakeholder Management</div>
+                    <p class="goal-description">Cross-functional collaboration, presenting to leadership</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-title">Iterative Design</div>
+                    <p class="goal-description">User testing, feedback integration, progressive enhancement</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Detect and handle portrait videos
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('loadedmetadata', function() {
+                if (this.videoHeight > this.videoWidth) {
+                    this.setAttribute('data-portrait', 'true');
+                }
+            });
+        });
+
+        // Slide gallery navigation
+        const slides = [
+            'AirDLS-FLO-pres-May-2022.002.jpeg',
+            'AirDLS-FLO-pres-May-2022.003.jpeg',
+            'AirDLS-FLO-pres-May-2022.004.jpeg',
+            'AirDLS-FLO-pres-May-2022.005.jpeg',
+            'AirDLS-FLO-pres-May-2022.006.jpeg',
+            'AirDLS-FLO-pres-May-2022.007.jpeg',
+            'AirDLS-FLO-pres-May-2022.008.jpeg',
+            'AirDLS-FLO-pres-May-2022.009.jpeg',
+            'AirDLS-FLO-pres-May-2022.010.jpeg',
+            'AirDLS-FLO-pres-May-2022.011.jpeg',
+            'AirDLS-FLO-pres-May-2022.012.jpeg',
+            'AirDLS-FLO-pres-May-2022.013.jpeg',
+            'AirDLS-FLO-pres-May-2022.014.jpeg',
+            'AirDLS-FLO-pres-May-2022.015.jpeg',
+            'AirDLS-FLO-pres-May-2022.016.jpeg',
+            'AirDLS-FLO-pres-May-2022.017.jpeg',
+            'AirDLS-FLO-pres-May-2022.018.jpeg',
+            'AirDLS-FLO-pres-May-2022.019.jpeg',
+            'AirDLS-FLO-pres-May-2022.020.jpeg',
+            'AirDLS-FLO-pres-May-2022.021.jpeg',
+            'AirDLS-FLO-pres-May-2022.022.jpeg',
+            'AirDLS-FLO-pres-May-2022.023.jpeg',
+            'AirDLS-FLO-pres-May-2022.024.jpeg',
+            'AirDLS-FLO-pres-May-2022.025.jpeg',
+            'AirDLS-FLO-pres-May-2022.026.jpeg',
+            'AirDLS-FLO-pres-May-2022.027.jpeg'
+        ];
+
+        let currentSlide = 0;
+        const basePath = 'assets/Airbnb - DLS/AirDLS-Flo-Pres-May-2022-jpg-slides/';
+        
+        const slideImg = document.getElementById('currentSlide');
+        const slideNum = document.getElementById('currentSlideNum');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateSlide() {
+            slideImg.src = basePath + slides[currentSlide];
+            slideNum.textContent = currentSlide + 2; // +2 because we start at slide 2
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+        });
+
+        updateSlide();
+    </script>
+</body>
+</html>

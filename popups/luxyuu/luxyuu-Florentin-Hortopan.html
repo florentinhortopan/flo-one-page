@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicon-512x512.png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="shortcut icon" href="../../favicon.ico">    
+    <!-- Primary Meta Tags -->
+    <title>Luxyuu - Fashion Brand Design | Florentin Hortopan</title>
+    <meta name="title" content="Luxyuu - Fashion Brand Design | Florentin Hortopan">
+    <meta name="description" content="Fashion brand design and product photography for Luxyuu, showcasing elegant accessories and contemporary fashion aesthetics.">
+    <meta name="keywords" content="Luxyuu, Fashion Design, Product Design, Fashion Photography, Brand Design, Accessories, Florentin Hortopan">
+    <meta name="author" content="Florentin Hortopan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://florentin.us/popups/luxyuu/luxyuu-Florentin-Hortopan.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://florentin.us/popups/luxyuu/luxyuu-Florentin-Hortopan.html">
+    <meta property="og:title" content="Luxyuu - Fashion Brand Design | Florentin Hortopan">
+    <meta property="og:description" content="Fashion brand design for Luxyuu - elegant accessories and contemporary aesthetics.">
+    <meta property="og:site_name" content="Florentin Hortopan Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://florentin.us/popups/luxyuu/luxyuu-Florentin-Hortopan.html">
+    <meta name="twitter:title" content="Luxyuu - Fashion Brand Design | Florentin Hortopan">
+    <meta name="twitter:description" content="Fashion brand design for Luxyuu.">
+    <meta name="twitter:creator" content="@florentinhortopan">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Minimal Header */
+        .header {
+            background: #fff;
+            color: #222;
+            padding: 80px 40px 40px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .badges {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid #222;
+            color: #222;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 64px;
+            font-weight: 300;
+            margin-bottom: 16px;
+            line-height: 1;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            color: #000;
+            letter-spacing: 1px;
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* Intro */
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .intro p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #444;
+            font-weight: 300;
+        }
+
+        /* Gallery - Editorial Style */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            opacity: 0.9;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 0 60px rgba(255, 255, 255, 0.1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 10001;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 10001;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Large Feature */
+        .gallery-item.large {
+            grid-column: span 2;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            h1 {
+                font-size: 48px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .gallery-item.large {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 60px 24px 32px;
+            }
+
+            h1 {
+                font-size: 40px;
+                letter-spacing: 2px;
+            }
+
+            .container {
+                padding: 60px 24px;
+            }
+
+            .intro {
+                margin-bottom: 60px;
+            }
+
+            .intro p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="badges">
+                <span class="badge">Fashion</span>
+                <span class="badge">Design</span>
+            </div>
+            <h1>Luxyuu</h1>
+            <p class="subtitle">Contemporary Fashion Accessories</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Intro -->
+        <div class="intro">
+            <p>Luxyuu represents a refined approach to fashion accessories, blending contemporary design with timeless elegance. Each piece is carefully crafted to complement modern lifestyles while maintaining an essential sophistication.</p>
+        </div>
+
+        <!-- Gallery -->
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="assets/Design-is-Art-Everybody-Can-Use-min_pages-to-jpg-0040.jpg" alt="Luxyuu fashion accessory design">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Design-is-Art-Everybody-Can-Use-min_pages-to-jpg-0041.jpg" alt="Luxyuu product photography">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Design-is-Art-Everybody-Can-Use-min_pages-to-jpg-0042.jpg" alt="Luxyuu brand aesthetic">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Design-is-Art-Everybody-Can-Use-min_pages-to-jpg-0043.jpg" alt="Luxyuu fashion collection">
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <script>
+        // Lightbox functionality
+        (function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxPrev = document.getElementById('lightboxPrev');
+            const lightboxNext = document.getElementById('lightboxNext');
+            const lightboxCounter = document.getElementById('lightboxCounter');
+            
+            const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+            let currentIndex = 0;
+
+            function openLightbox(index) {
+                currentIndex = index;
+                updateLightbox();
+                lightbox.classList.add('active');
+                // Don't affect the main page overflow - keep the popup open
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                // Don't restore main page overflow - popup remains open
+            }
+
+            function updateLightbox() {
+                const img = galleryImages[currentIndex];
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+                
+                lightboxPrev.style.display = currentIndex === 0 ? 'none' : 'flex';
+                lightboxNext.style.display = currentIndex === galleryImages.length - 1 ? 'none' : 'flex';
+            }
+
+            function showPrev() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateLightbox();
+                }
+            }
+
+            function showNext() {
+                if (currentIndex < galleryImages.length - 1) {
+                    currentIndex++;
+                    updateLightbox();
+                }
+            }
+
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', () => openLightbox(index));
+            });
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', showPrev);
+            lightboxNext.addEventListener('click', showNext);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrev();
+                if (e.key === 'ArrowRight') showNext();
+            });
+
+            // Touch gesture support for mobile
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchEndX = 0;
+            let touchEndY = 0;
+
+            lightbox.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            lightbox.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+                const minSwipeDistance = 50;
+
+                // Only handle horizontal swipes (ignore vertical scrolling)
+                if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+                    if (deltaX > 0) {
+                        // Swipe right - previous image
+                        showPrev();
+                    } else {
+                        // Swipe left - next image
+                        showNext();
+                    }
+                }
+            }
+
+            // Prevent zoom on double tap for mobile
+            lightbox.addEventListener('touchend', (e) => {
+                e.preventDefault();
+            }, { passive: false });
+        })();
+    </script>
+</body>
+</html>

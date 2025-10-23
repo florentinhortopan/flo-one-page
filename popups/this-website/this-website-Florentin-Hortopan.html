@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicon-512x512.png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="shortcut icon" href="../../favicon.ico">    
+    <!-- Primary Meta Tags -->
+    <title>This Website: A Living Portfolio | Florentin Hortopan</title>
+    <meta name="title" content="This Website: A Living Portfolio | Florentin Hortopan">
+    <meta name="description" content="This website is a living, breathing entity that evolves with technology, environment, and personal growth. Features comprehensive accessibility controls and inclusive design principles.">
+    <meta name="keywords" content="Living Portfolio, Digital Evolution, Creative Technology, AI Collaboration, Design Philosophy, Accessibility, Inclusive Design, Florentin Hortopan, Dynamic Websites">
+    <meta name="author" content="Florentin Hortopan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://florentin.us/popups/this-website/this-website-Florentin-Hortopan.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://florentin.us/popups/this-website/this-website-Florentin-Hortopan.html">
+    <meta property="og:title" content="This Website: A Living Portfolio | Florentin Hortopan">
+    <meta property="og:description" content="This website is a living, breathing entity that evolves with technology, environment, and personal growth.">
+    <meta property="og:site_name" content="Florentin Hortopan Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://florentin.us/popups/this-website/this-website-Florentin-Hortopan.html">
+    <meta name="twitter:title" content="This Website: A Living Portfolio">
+    <meta name="twitter:description" content="A manifesto on the future of digital portfolios and creative expression.">
+    <meta name="twitter:creator" content="@florentinhortopan">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#6366F1">
+    <meta name="format-detection" content="telephone=no">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0a0a0a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #6366F1;
+            border-radius: 50%;
+            animation: float 25s infinite linear;
+            opacity: 0.2;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100px) translateX(200px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+            padding: 80px 40px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .badges {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: badgeGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes badgeGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); }
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleShimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes titleShimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            opacity: 1;
+            color: #fff;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .tagline {
+            font-size: 18px;
+            font-weight: 600;
+            color: #E0E7FF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h3 {
+            font-size: 32px;
+            font-weight: 600;
+            margin: 40px 0 20px;
+            color: #E0E7FF;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #D1D5DB;
+            margin-bottom: 24px;
+        }
+
+        .intro-text {
+            font-size: 24px;
+            line-height: 1.7;
+            color: #F3F4F6;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        .manifesto {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 48px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .manifesto::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6366F1 0%, #8B5CF6 100%);
+        }
+
+        .manifesto h3 {
+            color: #F3F4F6;
+            margin-top: 0;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin: 48px 0;
+        }
+
+        .philosophy-card {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.2);
+            border-color: rgba(236, 72, 153, 0.5);
+        }
+
+        .philosophy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #EC4899 0%, #8B5CF6 100%);
+        }
+
+        .philosophy-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .philosophy-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #F3F4F6;
+        }
+
+        .philosophy-description {
+            font-size: 16px;
+            color: #D1D5DB;
+            line-height: 1.6;
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: #1a1a1a;
+            border: 1px solid #374151;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .code-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #6366F1 0%, #EC4899 100%);
+        }
+
+        .code-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: #9CA3AF;
+        }
+
+        .code-dots {
+            display: flex;
+            gap: 6px;
+            margin-right: 12px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot.red { background: #EF4444; }
+        .dot.yellow { background: #F59E0B; }
+        .dot.green { background: #10B981; }
+
+        .code-content {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #E5E7EB;
+        }
+
+        .keyword { color: #F59E0B; }
+        .string { color: #10B981; }
+        .comment { color: #6B7280; }
+        .function { color: #8B5CF6; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 60px 24px 40px;
+            }
+            
+            h1 {
+                font-size: 48px;
+            }
+            
+            .subtitle {
+                font-size: 20px;
+            }
+            
+            .container {
+                padding: 60px 24px;
+            }
+            
+            h2 {
+                font-size: 36px;
+            }
+            
+            .intro-text {
+                font-size: 20px;
+            }
+            
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="badges">
+                <span class="badge">Living Portfolio</span>
+                <span class="badge">Digital Evolution</span>
+                <span class="badge">Creative Philosophy</span>
+                <span class="badge">AI Collaboration</span>
+                <span class="badge">Dynamic Expression</span>
+                <span class="badge">♿ Accessible</span>
+            </div>
+            <h1>This Website</h1>
+            <p class="subtitle">A Living, Breathing Digital Entity</p>
+            <p class="tagline">Where Technology Meets Consciousness</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Intro -->
+        <section class="section fade-in">
+            <p class="intro-text">This website is not just a collection of pages and projects. It's a <strong>living organism</strong> that grows, adapts, and evolves with me—from designing 40ft speed boats in Viareggio to creating washable smart textiles that won Techtextil Innovation Awards. It reflects my journey from industrial design to digital strategy, from NURBS modeling to AI collaboration.</p>
+        </section>
+
+        <!-- The Philosophy -->
+        <section class="section fade-in">
+            <h2>The Philosophy</h2>
+            <p>After 20+ years designing everything from flood-resistant scuba masks tested by world champion Umberto Pelizzari to viral iPod cases that spread across the internet in 48 hours, I've learned that <strong>design is art everybody can use</strong>. This website embodies that philosophy—it's not just about showcasing work, it's about creating experiences that adapt, evolve, and serve real human needs.</p>
+            
+            <div class="manifesto">
+                <h3>🌱 The Living Portfolio Manifesto</h3>
+                <p><strong>Design is art everybody can use.</strong> From the precision NURBS modeling of a 40ft speed boat hull to the washable smart textiles of tshirtOS™, every project I've created serves a real human need while pushing the boundaries of what's possible.</p>
+                <p><strong>Technology amplifies human creativity.</strong> Whether it's the electro-fashion integration of Geometry Darling or the AI collaboration that built this very website, technology becomes a partner in creation, not a replacement for human insight.</p>
+                <p><strong>Every project teaches something new.</strong> From learning injection molding on uneven mass volumes with iGoatse to understanding the complexities of smart fabric safety and washability, each challenge shapes the next solution.</p>
+            </div>
+        </section>
+
+        <!-- The Three Pillars -->
+        <section class="section fade-in">
+            <h2>The Three Pillars</h2>
+            <p>This website's evolution mirrors my own journey—from founding Extraneo Design Studio in Florence to leading design systems at Gap Inc., from creating patents for smart textiles to building e-commerce platforms that achieved 10x sales growth.</p>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🔧</div>
+                    <h3 class="philosophy-title">Precision & Craft</h3>
+                    <p class="philosophy-description">From Rhinoceros NURBS modeling to advanced CAD and DFM, every project demands technical excellence. This website reflects that same attention to detail—every interaction, every animation, every accessibility feature is crafted with precision.</p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🚀</div>
+                    <h3 class="philosophy-title">Innovation & Impact</h3>
+                    <p class="philosophy-description">Whether it's the world's first washable LED display fabric or viral products that spread across the internet, I create solutions that push boundaries. This website demonstrates that same innovative spirit through AI collaboration and dynamic content.</p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🌐</div>
+                    <h3 class="philosophy-title">Human-Centered Design</h3>
+                    <p class="philosophy-description">From ergonomic medical devices to accessible web experiences, every project serves real human needs. This website's comprehensive accessibility system reflects my commitment to inclusive design that works for everyone.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Implementation -->
+        <section class="section fade-in">
+            <h2>The Implementation</h2>
+            <p>This website represents the latest evolution in my toolkit—from Rhinoceros and Grasshopper for industrial design to AI collaboration for digital experiences. It's built using the same systematic approach I've applied to everything from smart textile patents to e-commerce growth strategies.</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <span>florentin-portfolio.js</span>
+                </div>
+                <div class="code-content">
+<span class="comment">// From NURBS modeling to AI collaboration</span>
+<span class="keyword">const</span> <span class="function">buildPortfolio</span> = <span class="keyword">async</span> () => {
+    <span class="comment">// 20+ years of design evolution</span>
+    <span class="keyword">const</span> industrialDesign = <span class="function">loadProjects</span>([
+        <span class="string">"40ft-speed-boat"</span>,
+        <span class="string">"flooded-scuba-mask"</span>,
+        <span class="string">"tshirtOS-smart-fabric"</span>
+    ]);
+    
+    <span class="keyword">const</span> digitalStrategy = <span class="function">loadProjects</span>([
+        <span class="string">"luxyuu-10x-growth"</span>,
+        <span class="string">"gap-design-system"</span>,
+        <span class="string">"airbnb-dls"</span>
+    ]);
+    
+    <span class="comment">// AI collaboration for dynamic content</span>
+    <span class="keyword">const</span> aiPartner = <span class="function">initializeAI</span>({
+        creativity: <span class="string">"amplify"</span>,
+        accessibility: <span class="string">"universal"</span>,
+        evolution: <span class="string">"continuous"</span>
+    });
+    
+    <span class="function">await</span> <span class="function">synthesize</span>(industrialDesign, digitalStrategy, aiPartner);
+};
+
+<span class="comment">// Design is art everybody can use</span>
+<span class="function">buildPortfolio</span>();
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessibility Excellence -->
+        <section class="section fade-in">
+            <h2>♿ Accessibility Excellence</h2>
+            <p>This website doesn't just evolve with technology—it evolves with <strong>inclusive design principles</strong>. Every popup features a comprehensive accessibility system that demonstrates how technology can serve everyone, regardless of their abilities or preferences.</p>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🎛️</div>
+                    <h3 class="philosophy-title">Adaptive Interface</h3>
+                    <p class="philosophy-description">Every popup includes a floating accessibility panel with font size controls, line height adjustments, text spacing options, and color scheme alternatives. Users can customize their experience in real-time.</p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🎨</div>
+                    <h3 class="philosophy-title">Visual Accessibility</h3>
+                    <p class="philosophy-description">High contrast mode, dark mode, and sepia themes ensure content is readable for users with visual impairments. Enhanced focus indicators and reduced motion options respect user preferences.</p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">📱</div>
+                    <h3 class="philosophy-title">Universal Design</h3>
+                    <p class="philosophy-description">Screen reader optimization, keyboard navigation, and mobile-responsive accessibility controls ensure the experience works seamlessly across all devices and assistive technologies.</p>
+                </div>
+            </div>
+
+            <div class="manifesto">
+                <h3>🌟 Why Accessibility Matters</h3>
+                <p><strong>Inclusive by Design:</strong> This website proves that beautiful, innovative design and accessibility are not mutually exclusive. Every user deserves an exceptional experience.</p>
+                <p><strong>Technical Excellence:</strong> The accessibility system uses localStorage to remember user preferences across sessions, demonstrating how thoughtful engineering can enhance user experience.</p>
+                <p><strong>Future-Forward:</strong> As we build the future of digital experiences, accessibility must be foundational, not an afterthought. This website sets that standard.</p>
+            </div>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <span>accessibility.js</span>
+                </div>
+                <div class="code-content">
+<span class="comment">// Universal Accessibility System</span>
+<span class="keyword">const</span> <span class="function">initAccessibility</span> = () => {
+    <span class="keyword">const</span> preferences = <span class="function">loadUserPreferences</span>();
+    
+    <span class="comment">// Apply saved settings</span>
+    <span class="function">adjustFontSize</span>(preferences.fontSize);
+    <span class="function">changeColorScheme</span>(preferences.colorScheme);
+    <span class="function">toggleReducedMotion</span>(preferences.reducedMotion);
+    
+    <span class="comment">// Real-time customization</span>
+    <span class="function">enableLiveAdjustments</span>();
+    <span class="function">persistPreferences</span>();
+};
+
+<span class="comment">// Every popup, every user, every preference</span>
+<span class="function">document</span>.<span class="function">addEventListener</span>(<span class="string">'DOMContentLoaded'</span>, initAccessibility);
+                </div>
+            </div>
+        </section>
+
+        <!-- The Future -->
+        <section class="section fade-in">
+            <h2>The Future</h2>
+            <p>This website represents a new paradigm in digital expression. It's not just about showcasing work—it's about demonstrating the potential for <strong>symbiotic relationships between human creativity and artificial intelligence</strong>.</p>
+
+            <div class="manifesto">
+                <h3>🚀 What This Means</h3>
+                <p><strong>For Creators:</strong> Your digital presence can be as dynamic and evolving as you are. No more outdated portfolios that don't reflect your current capabilities.</p>
+                <p><strong>For Technology:</strong> AI becomes a creative partner, not a replacement. It amplifies human creativity while maintaining authentic expression.</p>
+                <p><strong>For Society:</strong> We're moving toward a future where technology and humanity are truly integrated, where digital tools enhance rather than diminish our creative potential.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Create floating elements
+        function createFloatingElements() {
+            const container = document.getElementById('floatingElements');
+            const elementCount = 30;
+
+            for (let i = 0; i < elementCount; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-element';
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 25 + 's';
+                element.style.animationDuration = (Math.random() * 10 + 20) + 's';
+                container.appendChild(element);
+            }
+        }
+
+        // Intersection Observer for animations
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            createFloatingElements();
+            initAnimations();
+        });
+
+        // Add some interactive effects
+        document.addEventListener('mousemove', (e) => {
+            const elements = document.querySelectorAll('.floating-element');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            elements.forEach((element, index) => {
+                const speed = (index % 3 + 1) * 0.3;
+                const xOffset = (x - 0.5) * speed * 30;
+                const yOffset = (y - 0.5) * speed * 30;
+                
+                element.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!-- Accessibility Tab -->
+<button class="accessibility-tab" id="accessibilityTab" onclick="toggleAccessibilityPanel()" aria-label="Open accessibility options">
+    ♿ Accessibility
+</button>
+
+<!-- Accessibility Panel -->
+<div class="accessibility-panel" id="accessibilityPanel">
+    <h3>♿ Accessibility Options</h3>
+    
+    <div class="accessibility-control">
+        <label for="fontSize">Font Size</label>
+        <input type="range" id="fontSize" min="12" max="24" value="16" onchange="adjustFontSize(this.value)">
+        <span id="fontSizeValue">16px</span>
+    </div>
+
+    <div class="accessibility-control">
+        <label for="lineHeight">Line Height</label>
+        <input type="range" id="lineHeight" min="1.2" max="2.0" step="0.1" value="1.6" onchange="adjustLineHeight(this.value)">
+        <span id="lineHeightValue">1.6</span>
+    </div>
+
+    <div class="accessibility-control">
+        <label>Text Spacing</label>
+        <button onclick="adjustTextSpacing('increase')">Increase</button>
+        <button onclick="adjustTextSpacing('decrease')">Decrease</button>
+        <button onclick="adjustTextSpacing('reset')">Reset</button>
+    </div>
+
+    <div class="accessibility-control">
+        <label for="colorScheme">Color Scheme</label>
+        <select id="colorScheme" onchange="changeColorScheme(this.value)">
+            <option value="default">Default</option>
+            <option value="high-contrast">High Contrast</option>
+            <option value="dark">Dark Mode</option>
+            <option value="sepia">Sepia</option>
+        </select>
+    </div>
+
+    <div class="accessibility-control">
+        <label class="checkbox-label">
+            <input type="checkbox" id="reducedMotion" onchange="toggleReducedMotion(this.checked)">
+            Reduce Motion
+        </label>
+    </div>
+
+    <div class="accessibility-control">
+        <label class="checkbox-label">
+            <input type="checkbox" id="enhancedFocus" onchange="toggleEnhancedFocus(this.checked)">
+            Enhanced Focus Indicators
+        </label>
+    </div>
+
+    <div class="accessibility-control">
+        <label class="checkbox-label">
+            <input type="checkbox" id="screenReader" onchange="toggleScreenReaderMode(this.checked)">
+            Screen Reader Optimized
+        </label>
+    </div>
+
+    <div class="accessibility-control">
+        <button onclick="resetAccessibility()" style="background: #ef4444; color: white; border-color: #ef4444;">Reset All</button>
+    </div>
+</div>
+
+<style>
+/* Accessibility Tab */
+.accessibility-tab {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: #6366F1;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.accessibility-tab:hover {
+    background: #4F46E5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+
+.accessibility-tab:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+.accessibility-tab.active {
+    background: #10B981;
+}
+
+.accessibility-tab.active:hover {
+    background: #059669;
+}
+
+/* Accessibility Panel */
+.accessibility-panel {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.accessibility-panel.active {
+    transform: translateX(0);
+}
+
+.accessibility-panel h3 {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.accessibility-control {
+    margin-bottom: 16px;
+}
+
+.accessibility-control label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.accessibility-control input[type="range"] {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.accessibility-control button {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.accessibility-control button:hover {
+    background: #e5e7eb;
+}
+
+.accessibility-control button.active {
+    background: #6366F1;
+    color: white;
+    border-color: #6366F1;
+}
+
+.accessibility-control select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+}
+
+.accessibility-control input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.accessibility-control .checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #374151;
+}
+
+/* High contrast mode */
+.high-contrast {
+    filter: contrast(150%) brightness(110%);
+}
+
+.high-contrast * {
+    border-color: #000 !important;
+}
+
+/* Reduced motion */
+.reduced-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+/* Focus indicators */
+.enhanced-focus *:focus {
+    outline: 3px solid #6366F1 !important;
+    outline-offset: 2px !important;
+}
+
+/* Color schemes */
+.color-scheme-high-contrast {
+    filter: contrast(150%) brightness(110%);
+}
+
+.color-scheme-high-contrast * {
+    border-color: #000 !important;
+}
+
+.color-scheme-dark {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+.color-scheme-dark h1,
+.color-scheme-dark h2,
+.color-scheme-dark h3,
+.color-scheme-dark h4,
+.color-scheme-dark strong {
+    color: #ffffff !important;
+}
+
+.color-scheme-dark p,
+.color-scheme-dark li {
+    color: #e5e5e5 !important;
+}
+
+.color-scheme-sepia {
+    background: #f4f1ea !important;
+    color: #5c4b37 !important;
+}
+
+.color-scheme-sepia h1,
+.color-scheme-sepia h2,
+.color-scheme-sepia h3,
+.color-scheme-sepia h4,
+.color-scheme-sepia strong {
+    color: #3d2f1f !important;
+}
+
+.color-scheme-sepia p,
+.color-scheme-sepia li {
+    color: #5c4b37 !important;
+}
+
+/* Mobile accessibility adjustments */
+@media (max-width: 768px) {
+    .accessibility-tab {
+        top: 10px;
+        right: 10px;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .accessibility-panel {
+        top: 60px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+    }
+}
+</style>
+
+<script>
+// Accessibility functionality
+function toggleAccessibilityPanel() {
+    const panel = document.getElementById('accessibilityPanel');
+    const tab = document.getElementById('accessibilityTab');
+    
+    panel.classList.toggle('active');
+    tab.classList.toggle('active');
+    
+    // Update aria-expanded for screen readers
+    tab.setAttribute('aria-expanded', panel.classList.contains('active'));
+}
+
+function adjustFontSize(value) {
+    document.documentElement.style.fontSize = value + 'px';
+    document.getElementById('fontSizeValue').textContent = value + 'px';
+    localStorage.setItem('accessibility-fontSize', value);
+}
+
+function adjustLineHeight(value) {
+    document.documentElement.style.setProperty('--line-height', value);
+    document.body.style.lineHeight = value;
+    document.getElementById('lineHeightValue').textContent = value;
+    localStorage.setItem('accessibility-lineHeight', value);
+}
+
+function adjustTextSpacing(action) {
+    const currentSpacing = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--text-spacing') || '1');
+    let newSpacing = currentSpacing;
+    
+    switch(action) {
+        case 'increase':
+            newSpacing = Math.min(currentSpacing + 0.1, 2.0);
+            break;
+        case 'decrease':
+            newSpacing = Math.max(currentSpacing - 0.1, 0.8);
+            break;
+        case 'reset':
+            newSpacing = 1;
+            break;
+    }
+    
+    document.documentElement.style.setProperty('--text-spacing', newSpacing);
+    document.body.style.letterSpacing = (newSpacing - 1) * 0.1 + 'em';
+    localStorage.setItem('accessibility-textSpacing', newSpacing);
+}
+
+function changeColorScheme(scheme) {
+    document.body.className = document.body.className.replace(/color-scheme-\w+/g, '');
+    
+    if (scheme !== 'default') {
+        document.body.classList.add('color-scheme-' + scheme);
+    }
+    
+    localStorage.setItem('accessibility-colorScheme', scheme);
+}
+
+function toggleReducedMotion(enabled) {
+    if (enabled) {
+        document.body.classList.add('reduced-motion');
+    } else {
+        document.body.classList.remove('reduced-motion');
+    }
+    localStorage.setItem('accessibility-reducedMotion', enabled);
+}
+
+function toggleEnhancedFocus(enabled) {
+    if (enabled) {
+        document.body.classList.add('enhanced-focus');
+    } else {
+        document.body.classList.remove('enhanced-focus');
+    }
+    localStorage.setItem('accessibility-enhancedFocus', enabled);
+}
+
+function toggleScreenReaderMode(enabled) {
+    if (enabled) {
+        document.body.classList.add('screen-reader-optimized');
+        // Add screen reader specific optimizations
+        document.querySelectorAll('img').forEach(img => {
+            if (!img.getAttribute('alt')) {
+                img.setAttribute('alt', 'Image');
+            }
+        });
+    } else {
+        document.body.classList.remove('screen-reader-optimized');
+    }
+    localStorage.setItem('accessibility-screenReader', enabled);
+}
+
+function resetAccessibility() {
+    // Reset all accessibility settings
+    document.documentElement.style.fontSize = '';
+    document.documentElement.style.setProperty('--line-height', '');
+    document.documentElement.style.setProperty('--text-spacing', '');
+    document.body.style.lineHeight = '';
+    document.body.style.letterSpacing = '';
+    document.body.className = document.body.className.replace(/color-scheme-\w+|reduced-motion|enhanced-focus|screen-reader-optimized/g, '');
+    
+    // Reset form controls
+    document.getElementById('fontSize').value = 16;
+    document.getElementById('lineHeight').value = 1.6;
+    document.getElementById('colorScheme').value = 'default';
+    document.getElementById('reducedMotion').checked = false;
+    document.getElementById('enhancedFocus').checked = false;
+    document.getElementById('screenReader').checked = false;
+    
+    // Update display values
+    document.getElementById('fontSizeValue').textContent = '16px';
+    document.getElementById('lineHeightValue').textContent = '1.6';
+    
+    // Clear localStorage
+    localStorage.removeItem('accessibility-fontSize');
+    localStorage.removeItem('accessibility-lineHeight');
+    localStorage.removeItem('accessibility-textSpacing');
+    localStorage.removeItem('accessibility-colorScheme');
+    localStorage.removeItem('accessibility-reducedMotion');
+    localStorage.removeItem('accessibility-enhancedFocus');
+    localStorage.removeItem('accessibility-screenReader');
+}
+
+// Load saved accessibility settings on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedFontSize = localStorage.getItem('accessibility-fontSize');
+    const savedLineHeight = localStorage.getItem('accessibility-lineHeight');
+    const savedTextSpacing = localStorage.getItem('accessibility-textSpacing');
+    const savedColorScheme = localStorage.getItem('accessibility-colorScheme');
+    const savedReducedMotion = localStorage.getItem('accessibility-reducedMotion') === 'true';
+    const savedEnhancedFocus = localStorage.getItem('accessibility-enhancedFocus') === 'true';
+    const savedScreenReader = localStorage.getItem('accessibility-screenReader') === 'true';
+
+    if (savedFontSize) {
+        adjustFontSize(savedFontSize);
+        document.getElementById('fontSize').value = savedFontSize;
+    }
+
+    if (savedLineHeight) {
+        adjustLineHeight(savedLineHeight);
+        document.getElementById('lineHeight').value = savedLineHeight;
+    }
+
+    if (savedTextSpacing) {
+        document.documentElement.style.setProperty('--text-spacing', savedTextSpacing);
+        document.body.style.letterSpacing = (savedTextSpacing - 1) * 0.1 + 'em';
+    }
+
+    if (savedColorScheme) {
+        changeColorScheme(savedColorScheme);
+        document.getElementById('colorScheme').value = savedColorScheme;
+    }
+
+    if (savedReducedMotion) {
+        toggleReducedMotion(true);
+        document.getElementById('reducedMotion').checked = true;
+    }
+
+    if (savedEnhancedFocus) {
+        toggleEnhancedFocus(true);
+        document.getElementById('enhancedFocus').checked = true;
+    }
+
+    if (savedScreenReader) {
+        toggleScreenReaderMode(true);
+        document.getElementById('screenReader').checked = true;
+    }
+});
+</script>
+

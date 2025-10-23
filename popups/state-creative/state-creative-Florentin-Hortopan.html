@@ -582,11 +582,23 @@
             const lightboxImg = document.getElementById('lightbox-img');
             lightboxImg.src = element.querySelector('img').src;
             lightbox.classList.add('active');
+            // Send message to parent to hide modal close button
+            try {
+                window.parent.postMessage({type: 'lightbox-open'}, '*');
+            } catch (e) {
+                console.log('Cannot send message to parent:', e);
+            }
             // Don't affect the main page overflow - keep the popup open
         }
 
         function closeLightbox() {
             document.getElementById('lightbox').classList.remove('active');
+            // Send message to parent to show modal close button
+            try {
+                window.parent.postMessage({type: 'lightbox-close'}, '*');
+            } catch (e) {
+                console.log('Cannot send message to parent:', e);
+            }
             // Don't restore main page overflow - popup remains open
         }
 

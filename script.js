@@ -76,6 +76,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'auto'; // Restore scrolling
     }
 
+    // Listen for messages from iframe (lightbox control)
+    window.addEventListener('message', function(event) {
+        if (event.data.type === 'lightbox-open') {
+            // Hide modal close button when lightbox is open
+            modalClose.style.display = 'none';
+        } else if (event.data.type === 'lightbox-close') {
+            // Show modal close button when lightbox is closed
+            modalClose.style.display = 'flex';
+        }
+    });
+
     // Close modal when close button is clicked
     modalClose.addEventListener('click', closeModal);
 

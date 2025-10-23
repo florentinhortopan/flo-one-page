@@ -167,9 +167,40 @@
             pointer-events: auto;
         }
 
+        /* Hide main popup content when lightbox is active */
+        .lightbox.active ~ * {
+            pointer-events: none !important;
+            opacity: 0.3;
+            filter: blur(2px);
+        }
+
+        /* Ensure lightbox content is always interactive */
+        .lightbox.active {
+            pointer-events: auto !important;
+        }
+
+        .lightbox.active * {
+            pointer-events: auto !important;
+        }
+
         .lightbox.active {
             display: flex;
             opacity: 1;
+        }
+
+        /* Disable all content when lightbox is active */
+        body.lightbox-active {
+            overflow: hidden;
+        }
+
+        body.lightbox-active .header,
+        body.lightbox-active .container,
+        body.lightbox-active .intro,
+        body.lightbox-active .gallery {
+            pointer-events: none !important;
+            opacity: 0.2;
+            filter: blur(3px);
+            transition: all 0.3s ease;
         }
 
         .lightbox-content {
@@ -192,7 +223,7 @@
         .lightbox-close {
             position: absolute;
             top: 20px;
-            left: 20px;
+            right: 20px;
             width: 50px;
             height: 50px;
             background: rgba(255, 255, 255, 0.3);
@@ -422,11 +453,23 @@
                 currentIndex = index;
                 updateLightbox();
                 lightbox.classList.add('active');
+                // Send message to parent to hide modal close button
+                try {
+                    window.parent.postMessage({type: 'lightbox-open'}, '*');
+                } catch (e) {
+                    console.log('Cannot send message to parent:', e);
+                }
                 // Don't affect the main page overflow - keep the popup open
             }
 
             function closeLightbox() {
                 lightbox.classList.remove('active');
+                // Send message to parent to show modal close button
+                try {
+                    window.parent.postMessage({type: 'lightbox-close'}, '*');
+                } catch (e) {
+                    console.log('Cannot send message to parent:', e);
+                }
                 // Don't restore main page overflow - popup remains open
             }
 

@@ -1,12 +1,16 @@
 # Vercel
 .vercel
 
-# Large assets that exceed Vercel limits
+# Large assets that exceed Vercel limits - temporarily excluded for deployment
 popups/airbnb/assets/
 popups/gopro/assets/
-popups/gap-inc/assets/
 popups/agent-of-presence/assets/
 popups/nagra-opentv/assets/
+
+# Keep smaller assets but exclude largest videos
+popups/gap-inc/assets/*.mp4
+popups/gap-inc/assets/*.mov
+popups/gap-inc/assets/*.m4v
 
 # Temporary files
 Untitled.mov

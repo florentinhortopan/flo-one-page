@@ -284,7 +284,7 @@
         
         .framework-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 24px;
             margin: 32px 0;
         }
@@ -294,6 +294,9 @@
             padding: 24px;
             border-radius: 12px;
             border-left: 4px solid #667eea;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
         }
         
         .framework-card h4 {
@@ -307,6 +310,13 @@
             color: #555;
             font-size: 16px;
             margin-bottom: 0;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .framework-card blockquote {
+            margin: 12px 0 0 0;
+            font-size: 15px;
         }
         
         .impact-stats {
@@ -423,6 +433,10 @@
             .framework-grid {
                 grid-template-columns: 1fr;
                 gap: 16px;
+            }
+            
+            .framework-card {
+                min-height: 180px;
             }
             
             .impact-stats {

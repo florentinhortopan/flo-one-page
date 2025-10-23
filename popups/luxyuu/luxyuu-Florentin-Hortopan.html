@@ -159,7 +159,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.95);
-            z-index: 99999;
+            z-index: 999999;
             justify-content: center;
             align-items: center;
             opacity: 0;
@@ -192,7 +192,7 @@
         .lightbox-close {
             position: absolute;
             top: 20px;
-            right: 20px;
+            left: 20px;
             width: 50px;
             height: 50px;
             background: rgba(255, 255, 255, 0.3);
@@ -206,7 +206,7 @@
             justify-content: center;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            z-index: 100000;
+            z-index: 9999999;
         }
 
         .lightbox-close:hover {
@@ -422,35 +422,11 @@
                 currentIndex = index;
                 updateLightbox();
                 lightbox.classList.add('active');
-                // Hide the main popup close button when lightbox is open
-                try {
-                    const mainCloseButton = window.parent.document.getElementById('modalClose');
-                    if (mainCloseButton) {
-                        mainCloseButton.style.display = 'none';
-                        console.log('Main close button hidden');
-                    } else {
-                        console.log('Main close button not found');
-                    }
-                } catch (e) {
-                    console.log('Cannot access parent document:', e);
-                }
                 // Don't affect the main page overflow - keep the popup open
             }
 
             function closeLightbox() {
                 lightbox.classList.remove('active');
-                // Show the main popup close button when lightbox closes
-                try {
-                    const mainCloseButton = window.parent.document.getElementById('modalClose');
-                    if (mainCloseButton) {
-                        mainCloseButton.style.display = 'flex';
-                        console.log('Main close button shown');
-                    } else {
-                        console.log('Main close button not found');
-                    }
-                } catch (e) {
-                    console.log('Cannot access parent document:', e);
-                }
                 // Don't restore main page overflow - popup remains open
             }
 

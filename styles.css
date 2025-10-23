@@ -591,7 +591,7 @@ body {
     position: absolute;
     top: 24px;
     right: 24px;
-    background: none;
+    background: rgba(248, 248, 248, 0.3);
     border: none;
     font-size: 28px;
     cursor: pointer;
@@ -607,7 +607,7 @@ body {
 }
 
 .modal-close:hover {
-    background-color: #f8f8f8;
+    background-color: rgba(248, 248, 248, 0.8);
     color: #000;
     transform: scale(1.1);
 }
@@ -615,7 +615,7 @@ body {
 .modal-close:focus {
     outline: 2px solid #000;
     outline-offset: 2px;
-    background-color: #f8f8f8;
+    background-color: rgba(248, 248, 248, 0.8);
     color: #000;
 }
 
@@ -626,7 +626,7 @@ body {
 .modal-close:focus-visible {
     outline: 2px solid #000;
     outline-offset: 2px;
-    background-color: #f8f8f8;
+    background-color: rgba(248, 248, 248, 0.8);
     color: #000;
 }
 

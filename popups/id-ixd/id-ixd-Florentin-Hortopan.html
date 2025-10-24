@@ -161,6 +161,7 @@
             width: 100%;
             height: auto;
             display: block;
+            cursor: pointer;
             transition: opacity 0.3s ease;
         }
         .gallery-item img:hover {
@@ -188,16 +189,16 @@
         
         .lightbox-content {
             position: relative;
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 90vw;
+            max-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
-        .lightbox img {
+        .lightbox-content img {
             max-width: 100%;
-            max-height: 100%;
+            max-height: 90vh;
             object-fit: contain;
             border-radius: 4px;
             box-shadow: 0 0 60px rgba(255, 255, 255, 0.1);

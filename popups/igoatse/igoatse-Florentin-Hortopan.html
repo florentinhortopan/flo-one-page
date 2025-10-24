@@ -77,7 +77,138 @@
             opacity: 1;
             transform: scale(1.02);
         }
-
+        
+        .intro {
+            margin: 40px 0;
+            padding: 32px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .intro p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #000;
+            margin-bottom: 16px;
+        }
+        
+        .media-coverage {
+            margin: 40px 0;
+            padding: 32px;
+            background: #fff3cd;
+            border-radius: 12px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .media-coverage h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 16px;
+        }
+        
+        .media-coverage blockquote {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #000;
+            font-style: italic;
+            margin: 16px 0;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .media-coverage .source {
+            font-size: 14px;
+            color: #666;
+            margin-top: 12px;
+        }
+        
+        .media-coverage .source a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .media-coverage .source a:hover {
+            text-decoration: underline;
+        }
+        
+        .outlet-coverage {
+            margin: 24px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .outlet-coverage h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 12px;
+        }
+        
+        .outlet-description {
+            font-size: 14px;
+            color: #666;
+            margin-top: 12px;
+            font-style: italic;
+        }
+        
+        .coverage-summary {
+            margin-top: 32px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            border: 2px solid #ffc107;
+        }
+        
+        .coverage-summary p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #000;
+            margin: 0;
+        }
+        
+        .project-details {
+            margin: 40px 0;
+            padding: 32px;
+            background: #e7f3ff;
+            border-radius: 12px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .project-details h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 16px;
+        }
+        
+        .project-details ul {
+            list-style: none;
+            margin: 16px 0;
+        }
+        
+        .project-details li {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #000;
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .project-details li::before {
+            content: "→";
+            color: #007bff;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+        
         /* Lightbox Styles */
         .lightbox {
             display: none;
@@ -181,7 +312,7 @@
             left: 50%;
             transform: translateX(-50%);
             color: white;
-            font-size: 16px;
+                font-size: 16px;
             background: rgba(0, 0, 0, 0.6);
             padding: 10px 20px;
             border-radius: 20px;
@@ -206,6 +337,82 @@
         <div class="gallery">
             <img src="assets/Design-is-Art-Everybody-Can-Use-min_pages-to-jpg-0020.jpg" alt="iGoatse design">
             <img src="assets/Design-is-Art-Everybody-Can-Use-min_pages-to-jpg-0021.jpg" alt="iGoatse design details">
+        </div>
+
+        <div class="intro">
+            <p><strong>The iGoatse iPod Case:</strong> A viral design project that became an internet phenomenon, demonstrating how design can capture cultural moments and generate massive online engagement through clever conceptual execution.</p>
+        </div>
+
+        <div class="media-coverage">
+            <h3>Major Media Coverage</h3>
+            
+            <div class="outlet-coverage">
+                <h4>Gizmodo</h4>
+                <blockquote>
+                    "The new iGoatse is the definitive skin for your iPod. There are no words to describe it. And you know why."
+                </blockquote>
+                <div class="source">
+                    <strong>Source:</strong> <a href="https://gizmodo.com/igoatse-ipod-case-163999" target="_blank" rel="noopener">Gizmodo - "iGoatse iPod Case" (March 30, 2006)</a>
+                </div>
+                <p class="outlet-description">
+                    <strong>Gizmodo</strong> - Leading tech blog known for gadget reviews and tech culture coverage. One of the most influential tech publications of the 2000s.
+                </p>
+            </div>
+
+            <div class="outlet-coverage">
+                <h4>Ars Technica</h4>
+                <blockquote>
+                    "Just want you always wanted: Goatse iPod case. Today, we're enlightened to the latest tribute to two diametrically opposite elements of Internet pop culture, fused into one."
+                </blockquote>
+                <div class="source">
+                    <strong>Source:</strong> <a href="https://arstechnica.com/gadgets/2006/03/3401/" target="_blank" rel="noopener">Ars Technica - "Just want you always wanted: Goatse iPod case" (March 30, 2006)</a>
+                </div>
+                <p class="outlet-description">
+                    <strong>Ars Technica</strong> - Respected technology publication known for in-depth technical analysis and coverage of internet culture. Part of Condé Nast's tech media portfolio.
+                </p>
+            </div>
+
+            <div class="outlet-coverage">
+                <h4>Wired</h4>
+                <blockquote>
+                    "The new iGoatse is the definitive skin for your iPod. There are no words to describe it. And you know why."
+                </blockquote>
+                <div class="source">
+                    <strong>Source:</strong> <a href="https://www.wired.com/2006/03/igoatse-ipod-ca/" target="_blank" rel="noopener">Wired - "iGoatse iPod Case" (March 30, 2006)</a>
+                </div>
+                <p class="outlet-description">
+                    <strong>Wired</strong> - Premier technology and culture magazine, part of Condé Nast. Known for covering the intersection of technology, business, and culture.
+                </p>
+            </div>
+
+            <div class="outlet-coverage">
+                <h4>SlashGear</h4>
+                <blockquote>
+                    "The iGoatse Gives Horrifying Flashbacks... this is the most creative iPod case ever. Whoever designed this definitely has an eye for detail."
+                </blockquote>
+                <div class="source">
+                    <strong>Source:</strong> <a href="https://www.slashgear.com/the-igoatse-gives-horrifying-flashbacks-085649/" target="_blank" rel="noopener">SlashGear - "The iGoatse Gives Horrifying Flashbacks" (February 14, 2019)</a>
+                </div>
+                <p class="outlet-description">
+                    <strong>SlashGear</strong> - Technology news and review site covering gadgets, cars, and consumer electronics. Known for detailed product coverage and tech industry analysis.
+                </p>
+            </div>
+
+            <div class="coverage-summary">
+                <p><strong>Media Impact:</strong> The iGoatse project received coverage across multiple major tech publications, demonstrating how viral internet culture could generate significant media attention for design projects. The coverage spanned from initial viral moment (2006) to retrospective analysis (2019), showing lasting cultural impact.</p>
+            </div>
+        </div>
+
+        <div class="project-details">
+            <h3>Project Impact & Details</h3>
+            <ul>
+                <li><strong>Viral Success:</strong> Went viral within 48 hours of announcement, demonstrating the power of internet culture in product marketing</li>
+                <li><strong>Entrepreneurial Launch:</strong> Launched pre-manufacture with concept renderings, proving the viability of viral marketing for physical products</li>
+                <li><strong>Media Recognition:</strong> Featured on Gizmodo and other tech blogs, showcasing how design can generate organic media coverage</li>
+                <li><strong>Cultural Commentary:</strong> Used internet meme culture as a vehicle for product design, bridging digital and physical worlds</li>
+                <li><strong>Manufacturing Innovation:</strong> EDM-machined injection molds created for multiple color variations</li>
+                <li><strong>Design Philosophy:</strong> Demonstrated how conceptual design can transcend traditional product categories through cultural relevance</li>
+            </ul>
         </div>
     </main>
 

@@ -141,11 +141,41 @@
             border-radius: 3px;
         }
         
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item img:hover {
+            opacity: 0.9;
+        }
+        
         @media (max-width: 768px) {
             .header { padding: 40px 24px; }
             h1 { font-size: 32px; }
             .container { padding: 40px 24px; }
             .project-title { font-size: 24px; }
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
         }
     </style>
 </head>
@@ -156,8 +186,60 @@
             <p class="subtitle">Featured Projects: From Boats to Wearables</p>
         </div>
     </header>
-    
+
     <main class="container">
+        <!-- Featured Projects Gallery -->
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="assets/Amantide-trike-publication-01.jpg" alt="Amantide Electric Trike - Design publication">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Amantide-trike-publication-02.jpg" alt="Amantide Electric Trike - Technical details">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/De-Rigo-spectacles-01.jpg" alt="De Rigo Spectacles - Design concept">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/De-Rigo-Spectacles-02.jpg" alt="De Rigo Spectacles - Product development">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/i5hot-patented-launched-glove-01.jpg" alt="i5hot Patented Glove - Innovation showcase">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/i5hot-patented-launched-glove-02.jpg" alt="i5hot Patented Glove - Technical implementation">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Ing-sole-40ft-boat-design-01.jpg" alt="40ft Speed Boat - Naval design">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Ing-sole-40ft-boat-design-02.jpg" alt="40ft Speed Boat - Engineering details">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Nootka-interactive-exibit-01.jpg" alt="Nootka Interactive Exhibit - Museum design">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Nootka-interactive-exibit-02.jpg" alt="Nootka Interactive Exhibit - User experience">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Roll-on-medical-01.jpg" alt="Roll-on Medical Device - Healthcare innovation">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Roll-on-medical-02.jpg" alt="Roll-on Medical Device - Product design">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Toyota-Cesab-tow-tractor-01.jpg" alt="Toyota Cesab Tow Tractor - Industrial design">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Toyota-Cesab-tow-tractor-02.jpg" alt="Toyota Cesab Tow Tractor - Engineering solution">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Viceversa-Interior-Design-01.jpg" alt="Viceversa Interior Design - Space planning">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/Viceversa-Interior-design-02.jpg" alt="Viceversa Interior Design - Design execution">
+            </div>
+        </div>
+
         <div class="intro">
             <p><strong>Design Philosophy:</strong> Blending precision NURBS modeling and design-for-manufacture with human-centered innovation. These projects span naval design, medical devices, transportation, wearables, and smart textiles—demonstrating versatility across physical and digital product design.</p>
         </div>
